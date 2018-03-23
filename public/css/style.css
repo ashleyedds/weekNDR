@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* LANDING PAGE */
+html { 
+    background: url(../images/cityscape.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  nav .nav-wrapper {
+      background-color: #046971;
+      height: 120px;
+  }
+
+  .landing-login {
+      font-size: 40px;
+      margin: 25px;
+      font-family: 'Raleway', sans-serif;
+  }
+
+  .landing-icon {
+    position: absolute;
+    top: 19%;
+    background-color: rgba(4,105,113,0.3);
+  }
+
+  .landing-header {
+    font-family: 'Saira Condensed', sans-serif;
+    color: #fff;
+    position: absolute;
+    top: 38%;
+    left: 34%;
+    font-size: 100px;
+    text-shadow:
+    -0.5px -0.5px 0 #000,
+    0.5px -0.5px 0 #000,
+    -0.5px 0.5px 0 #000,
+    0.5px 0.5px 0 #000;
+  }
+
+  .submit-btn {
+      background-color: #046971;
+      position: absolute;
+      top: 50%;
+      left: 39%;
+      font-size: 40px;
+      padding: 50px 50px 70px;
+  }
+
