@@ -26,7 +26,6 @@ html {
   .landing-icon {
     position: absolute;
     top: 19%;
-    background-color: rgba(4,105,113,0.3);
   }
 
   .landing-header {
@@ -43,6 +42,15 @@ html {
     0.5px 0.5px 0 #000;
   }
 
+  /* .landing-sub {
+    font-family: 'Raleway', sans-serif;
+    color: #fff;
+    font-weight: bold;
+    position: absolute;
+    top: 46%;
+    left: 28%;
+  } */
+
   .submit-btn {
       background-color: #046971;
       position: absolute;
@@ -50,5 +58,28 @@ html {
       left: 39%;
       font-size: 40px;
       padding: 50px 50px 70px;
+      text-shadow:
+        -0.5px -0.5px 0 #000,
+        0.5px -0.5px 0 #000,
+        -0.5px 0.5px 0 #000,
+        0.5px 0.5px 0 #000;
   }
 
+  .slider .mobile-slider.slides {
+    background-color: rgba(0,0,0,0);
+    font-family: 'Saira Condensed', sans-serif;
+  }
+  .mobile-slider.slider {
+    position: fixed;
+    top: 60%;
+    right: -2%;
+    height: 280px;
+  }
+
+  .mobile-slider.slider .indicators {
+    bottom: 40%;
+  }
+
+  .mobile-slider.slider .indicators .indicator-item.active {
+    background-color: #046971;
+  }
