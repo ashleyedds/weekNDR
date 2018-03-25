@@ -35,7 +35,7 @@ $(document).ready(function() {
     var newInterest = {
       title: titleInput.val().trim(),
       description: descInput.val().trim(),
-      estCost: estCost.val()
+      estCost: parseInt(estCost.val())
     };
 
     console.log(newInterest);
@@ -85,3 +85,8 @@ $(document).ready(function() {
       });
   }
 });
+
+
+
+
+

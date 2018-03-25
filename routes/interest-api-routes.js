@@ -5,8 +5,9 @@
 // Dependencies
 // =============================================================
 
-// Requiring our models
+// Requiring our models and passport as we've configured it
 var db = require("../models");
+var passport = require("../config/passport");
 
 // Routes
 // =============================================================
@@ -38,11 +39,29 @@ module.exports = function(app) {
   });
 
   // POST route for saving a new post
-  app.post("/api/interests", function(req, res) {
-    db.Interest.create(req.body).then(function(dbPost) {
-      res.json(dbPost);
+  app.post("/api/new", function(req, res) {
+    // Take the request...
+    var interest = req.body;
+
+    // Create a routeName
+
+    // Using a RegEx Pattern to remove spaces from character.name
+    // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+    var routeName = character.name.replace(/\s+/g, "").toLowerCase();
+
+    // Then add the character to the database using sequelize
+    Interest.create({
+      routeName: routeName,
+      name: character.name,
+      role: character.role,
+      age: character.age,
+      forcePoints: character.forcePoints
+    }).then(function(result) {
+      // Result here would be the newly created character
+      res.end();
     });
   });
+};
 
   // DELETE route for deleting posts
   app.delete("/api/interests/:id", function(req, res) {
@@ -67,4 +86,3 @@ module.exports = function(app) {
       res.json(dbPost);
     });
   });
-};
