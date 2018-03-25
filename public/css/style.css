@@ -12,15 +12,39 @@ html {
     background-size: cover;
   }
 
+  .mobile-content{
+    display: none;
+  }
+
+
+  /* MOBILE */
+
+  @media only screen 
+    and (min-device-width : 320px) 
+    and (max-device-width : 480px){ 
+      .mobile-content {
+        display: inline;
+      }
+      .tablet-desktop-content {
+        display: none;
+      }
+      nav .nav-wrapper {
+        height: 120px;
+      }
+      .landing-login {
+        font-size: 40px;
+        margin: 25px;
+      }
+  }
+
   nav .nav-wrapper {
       background-color: #046971;
-      height: 120px;
+      z-index: 3;
   }
 
   .landing-login {
-      font-size: 40px;
-      margin: 25px;
       font-family: 'Raleway', sans-serif;
+      margin-right: 25px;
   }
 
   .landing-icon {
@@ -41,15 +65,6 @@ html {
     -0.5px 0.5px 0 #000,
     0.5px 0.5px 0 #000;
   }
-
-  /* .landing-sub {
-    font-family: 'Raleway', sans-serif;
-    color: #fff;
-    font-weight: bold;
-    position: absolute;
-    top: 46%;
-    left: 28%;
-  } */
 
   .submit-btn {
       background-color: #046971;
@@ -83,3 +98,75 @@ html {
   .mobile-slider.slider .indicators .indicator-item.active {
     background-color: #046971;
   }
+
+  /* TABLET/DESKTOP */
+  .slider .indicators .indicator-item.active {
+    background-color: #046971;
+  }
+
+  .slider .slides {
+    font-family: 'Saira Condensed', sans-serif;
+    position: relative;
+  }
+
+  .slider .slides li .caption {
+    top: 63%;
+  }
+
+  .row .desktop-logo.col.s12 {
+    z-index: 3;
+    position: fixed;
+    margin-left: 20%;
+    top: 15%;
+  }
+
+  .desktop-signup {
+    position: absolute;
+    top: 45%;
+    left: 46%;
+    z-index: 5;
+    background-color: #046971;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  /* MODALS */
+  .movie-icon, .concert-icon, .shopping-icon, .dinner-icon, .drinks-icon, .outing-icon, .vacation-icon, .ring-icon, .car-icon, .profile-one, .profile-two, .profile-three, .profile-four, .profile-five, .profile-six, .profile-seven, .profile-eight, .profile-nine {
+    height: 100px;
+  }
+
+  .car-label {
+    top: 24px;
+    right: 80px;
+  }
+
+  .modal-title {
+    color: #081853;
+    font-family: 'Saira Condensed', sans-serif;
+    text-align: center;
+  }
+
+  .budget-box {
+    position: absolute;
+    left: 32%;
+  }
+
+  .file-upload {
+    display: none;
+}
+
+.profile-pic {
+  max-width: 200px;
+  max-height: 200px;
+  display: block;
+  position: absolute;
+  top: 20%;
+  left: 11%
+}
+
+.upload-button {
+  position: absolute;
+  top: 62%;
+  left: 16%;
+}
+
+  
