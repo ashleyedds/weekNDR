@@ -23,54 +23,31 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h2>Welcome <span class="member-name"></span></h2>
+        <button type="button" class="btn btn-secondary" id="interestBtn">Interests</button>
       </div>
     </div>
   </div>
-  <div class="col-md-6 col-md-offset-3">
-    <form id="interest">
-      <div class="form-group">
-        <label for="title">Title:</label>
-        <input type="text" class="form-control" id="title">
-        <br />
-        <label for="body">Description:</label>
-        <textarea class="form-control" rows="10" id="description"></textarea>
-        <br />
-        <label for="body">Estimated Cost:</label>
-        <input type="text" class="form-control" id="estCost">
-        <br />
-        <button type="submit" class="btn btn-success submit">Submit</button>
-      </div>
-    </form>
+
   </div>
-  <div class="col-lg-12">
-
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title"><strong>Add Adventure</strong></h3>
-      </div>
-      <div class="panel-body">
-        <form action="" method="POST" role="form">
-        
-          <div class="form-group">
-            <label for="">Title</label>
-            <input type="text" class="form-control" id="title" placeholder="">
-          </div>
-        </form>
-        <br>
-        <div class="text-right">
-          <button type="submit" class="btn btn-primary btn-md" id="add-btn"><span class="glyphicon glyphicon-fire"></span> Add to the Force</button>
-        </div>
-      </div>
+  <form id="forms" class="col-md-6 col-md-offset-3">
+    <div class="form-group">
+      <label for="formGroupExampleInput">Interest</label>
+      <input type="text" class="form-control" id="title" placeholder="Movies, Food, etc">
     </div>
+    
+    <div class="form-group">
+      <label for="formGroupExampleInput3">Estimated Cost</label>
+      <input type="text" class="form-control" id="estCost" placeholder="$$$">
+      <button type="button" class="btn btn-secondary" id="submitBtn">Submit</button>
+    </div>
+  </form>
 
-  </div>			
-</div>
-</div>
+  <div id="interestsDiv" class="col-md-6 col-md-offset-3">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/members.js"></script>
+  <script type="text/javascript" src="js/interests.js"></script>
 
-  <script src="js/adventure.js" type="text/javascript"></script>
 </body>
 
 </html>

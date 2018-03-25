@@ -52,5 +52,25 @@ module.exports = function(app) {
     }
   });
 
+  app.post("/api/interests", function(req, res) {
+    console.log("routes" + req.body.interests)
+    db.Interest.create({
+      title: req.body.interests.title,
+      // description: req.body.interests.description,
+      estCost: req.body.interests.estCost
+    }).then(function(err) {
+      res.end();
+    })
+  });
+
+  app.get("/api/interests", function(req, res) {
+    // In this case, just db.Author
+    db.Interest.findAll({
+      
+    }).then(function(dbPost) {
+      res.json(dbPost);
+    });
+  });
+
 };
 
