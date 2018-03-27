@@ -118,7 +118,7 @@
     position: relative;
   }
 
-  .row .col.s12 {
+  .row .desktop-logo.col.s12 {
     left: 5%;
   }
 
@@ -146,11 +146,6 @@
     color: #081853;
     font-family: 'Saira Condensed', sans-serif;
     text-align: center;
-  }
-
-  .budget-box {
-    position: absolute;
-    left: 32%;
   }
 
   .file-upload {
