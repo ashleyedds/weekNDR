@@ -113,11 +113,15 @@
     top: 63%;
   }
 
-  .row .desktop-logo.col.s12 {
-    position: fixed;
+  .desktop-logo {
     z-index: 5;
-    left: 35%;
+    position: relative;
   }
+
+  .row .col.s12 {
+    left: 5%;
+  }
+
 
   .desktop-signup {
     position: absolute;
