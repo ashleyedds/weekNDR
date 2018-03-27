@@ -4,7 +4,7 @@
 }
 
 /* LANDING PAGE */
-html { 
+.landing-html { 
     background: url(../images/cityscape.png) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -28,7 +28,7 @@ html {
       .tablet-desktop-content {
         display: none;
       }
-      nav .nav-wrapper {
+      nav .nav-landing {
         height: 120px;
       }
       .landing-login {
@@ -169,4 +169,30 @@ html {
   left: 16%;
 }
 
-  
+
+
+/* DASHBOARD */
+.dashboard-html {
+  background-color: #fff;
+}
+
+img.dashboard-logo.responsive-img {
+  height: 50px;
+}
+
+nav .nav-dashboard {
+  background-color: #046971;
+}
+
+.dashboard-profile {
+  margin-top: 25px;
+}
+
+.dashboard-welcome {
+  font-family: 'Saira Condensed', sans-serif;
+  color: #081853;
+  font-size: 25px;
+  position: absolute;
+  left: 39%;
+}
+
