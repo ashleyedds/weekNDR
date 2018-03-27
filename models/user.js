@@ -18,6 +18,8 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     }
+
+    
   });
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
   User.prototype.validPassword = function(password) {
@@ -35,7 +37,7 @@ module.exports = function(sequelize, DataTypes) {
   //   User.hasMany(models.Interest, {
   //     onDelete: "cascade"
   //   });
-  // };
+  // }; 
 
   return User;
 };
