@@ -114,10 +114,9 @@
   }
 
   .row .desktop-logo.col.s12 {
-    z-index: 3;
     position: fixed;
-    margin-left: 20%;
-    top: 15%;
+    z-index: 5;
+    left: 35%;
   }
 
   .desktop-signup {
