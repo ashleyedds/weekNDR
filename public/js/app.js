@@ -9,6 +9,12 @@ $(document).ready(function () {
 
     $(".button-collapse").sideNav();
 
+    $('.carousel.carousel-slider').carousel({
+        fullWidth: true,
+      });
+
+      $('.sidenav').sidenav();
+
     //Upload profile picture
     var readURL = function (input) {
         if (input.files && input.files[0]) {

@@ -22,27 +22,109 @@
 <body>
 
   <div class="mobile-content">
-      <!-- NAV BAR HERE -->
-      
-
-    <div class="mobile-content container">
-      <div class="row">
-        <div class="col s4 offset-s4">
-          <img src="images/profile.png" class="dashboard-profile circle responsive-img">
-          <h2 class="dashboard-welcome">Welcome
-            <span class="member-name"></span>
-          </h2>
-        </div>
+    <header>
+      <div class="navbar-fixed">
+        <nav>
+          <div class="nav-wrapper">
+            <a href="#!" class="brand-logo right">
+              <img src="images/w.png" class="dashboard-logo-mobile responsive-img">
+            </a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse">
+              <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+              <li>
+                <a href="#">Edit budget</a>
+              </li>
+              <li>
+                <a href="#">Edit profile</a>
+              </li>
+              <li>
+                <a href="#">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
 
+      <ul class="side-nav" id="mobile-demo">
+        <li>
+          <a href="#">Edit budget</a>
+        </li>
+        <li>
+          <a href="#">Edit profile</a>
+        </li>
+        <li>
+          <a href="#">Logout</a>
+        </li>
+      </ul>
+    </header>
+
+    <div class="row">
+      <div class="col s4 offset-s4">
+        <img src="images/profile.png" class="dashboard-profile circle responsive-img">
+        <h2 class="dashboard-welcome">Welcome
+          <span class="member-name"></span>
+        </h2>
+      </div>
     </div>
 
-    
+    <div class="row">
+      <div class="col s12 chart-div center-align">
+        <span>
+          <i class="material-icons left-swipe">chevron_left</i>
+        </span>
+        <div class="carousel carousel-slider">
+          <a class="carousel-item" href="#one!">
+            <img src="images/standinchart.png">
+          </a>
+          <a class="carousel-item" href="#two!">
+            <img src="images/standinbargraph.png">
+          </a>
+          <a class="carousel-item" href="#three!">
+            <img src="images/standingoalgraph.png">
+          </a>
+        </div>
+        <span>
+          <i class="material-icons right-swipe">chevron_right</i>
+        </span>
+      </div>
+    </div>
+  </div>
 
-     
-</div>
+  <div class="tablet-desktop-dashboard">
+    <header id="header" class="page-topbar">
+      <div class="navbar-fixed dashboard-navbar">
+        <nav class="navbar-color">
+          <div class="nav-wrapper dashboard-wrapper">
+              <div class="nav-wrapper dashboard-nav">
+                  <a href="#" class="brand-logo">
+                    <img src="images/weekndr.png" class="desktop-dashboard-logo">
+                  </a>
+                </div>
+          </div>
+        </nav>
+      </div>
+    </header>
 
-<div id="myDiv"></div>
+    <aside id="left-sidebar-nav">
+      <ul id="slide-out" class="side-nav fixed leftside-navigation ps-container ps-active-y" style="transform: translateX(0%);">
+        <li>
+          <div class="row dashboard-profile-row">
+            <div class="col s12 center-align">
+              <img src="images/profile.png" class="dashboard-desktop-profile responsive-img">
+              <h2 class="dashboard-welcome desktop-welcome">Welcome
+                  <span class="member-name"></span>
+                </h2>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </aside>
+
+
+
+
   <!-- SCRIPT LINKS -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
