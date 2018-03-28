@@ -54,7 +54,7 @@ $(document).ready(function() {
   function createAuthorRow(authorData) {
     var newTr = $("<tr>");
     newTr.data("user", authorData);
-    newTr.append("<td>" + authorData.name + "</td>");
+    newTr.append("<td>" + authorData.firstName + "</td>");
     newTr.append("<td> " + authorData.Posts.length + "</td>");
     newTr.append("<td><a href='/blog?author_id=" + authorData.id + "'>Go to Interests</a></td>");
     newTr.append("<td><a href='/cms?author_id=" + authorData.id + "'>Create a Interest</a></td>");
@@ -71,6 +71,10 @@ $(document).ready(function() {
       }
       renderAuthorList(rowsToAdd);
       firstName.val("");
+      lastName.val("");
+      email.val("");
+      password.val("");
+      budget.val("");
     });
   }
 
