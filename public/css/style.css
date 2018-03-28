@@ -113,12 +113,15 @@
     top: 63%;
   }
 
-  .row .desktop-logo.col.s12 {
-    z-index: 3;
-    position: fixed;
-    margin-left: 20%;
-    top: 15%;
+  .desktop-logo {
+    z-index: 5;
+    position: relative;
   }
+
+  .row .desktop-logo.col.s12 {
+    left: 5%;
+  }
+
 
   .desktop-signup {
     position: absolute;
@@ -143,11 +146,6 @@
     color: #081853;
     font-family: 'Saira Condensed', sans-serif;
     text-align: center;
-  }
-
-  .budget-box {
-    position: absolute;
-    left: 32%;
   }
 
   .file-upload {
