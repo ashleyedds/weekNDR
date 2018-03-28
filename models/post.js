@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     estCost: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     },
     actualCost: {
       type: DataTypes.INTEGER,

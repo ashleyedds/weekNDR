@@ -1,9 +1,15 @@
 $(document).ready(function() {
   // Getting jQuery references to the post body, title, form, and author select
-  var bodyInput = $("#body");
   var titleInput = $("#title");
+  var bodyInput = $("#body");
+  var estCost = $("#estCost");
+  var actualCost = $("#actualCost");
+  var eventDate = $("#eventDate");
+  var currentDate = $("#currentDate");
   var cmsForm = $("#cms");
   var authorSelect = $("#author");
+
+
   // Adding an event listener for when the form is submitted
   $(cmsForm).on("submit", handleFormSubmit);
   // Gets the part of the url that comes after the "?" (which we have if we're updating a post)
@@ -35,6 +41,32 @@ $(document).ready(function() {
       return;
     }
     // Constructing a newPost object to hand to the database
+      // var Post = sequelize.define("Post", {
+  //   title: {
+  //     type: DataTypes.STRING,
+  //     allowNull: false,
+  //     validate: {
+  //       len: [1,160]
+  //     }
+  //   },
+  //   body: {
+  //     type: DataTypes.TEXT,
+  //     allowNull: false,
+  //     len: [1]
+  //   },
+  //   estCost: {
+  //     type: DataTypes.INTEGER,
+  //     allowNull: true
+  //   },
+  //   actualCost: {
+  //     type: DataTypes.INTEGER,
+  //     allowNull: true
+  //   },
+  //   eventDate: {
+  //     type: DataTypes.DATE,
+  //     allowNull: true
+  //   }
+  // });
     var newPost = {
       title: titleInput
         .val()
@@ -42,7 +74,16 @@ $(document).ready(function() {
       body: bodyInput
         .val()
         .trim(),
+      estCost: estCost
+        .val(),
       AuthorId: authorSelect.val()
+        // Getting jQuery references to the post body, title, form, and author select
+  // var titleInput = $("#title");
+  // var bodyInput = $("#body");
+  // var estCost = $("#estCost");
+  // var actualCost = $("#actualCost");
+  // var eventDate = $("#eventDate");
+  // var currentDate = $("#currentDate");
     };
 
     // If we're updating a post run updatePost to update a post
