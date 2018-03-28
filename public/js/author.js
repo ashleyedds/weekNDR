@@ -70,7 +70,7 @@ $(document).ready(function() {
         rowsToAdd.push(createAuthorRow(data[i]));
       }
       renderAuthorList(rowsToAdd);
-      nameInput.val("");
+      firstName.val("");
     });
   }
 

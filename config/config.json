@@ -2,8 +2,7 @@
   "development": {
     "username": "root",
     "password": "root",
-    "database": "passport_demo",
-    "host": "localhost",
+    "database": "blogger",
     "dialect": "mysql"
   },
   "test": {
