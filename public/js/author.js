@@ -37,7 +37,8 @@ $(document).ready(function() {
     .val(),
     password: password
     .val(),
-    weeklyFunds: budget.val(),
+    weeklyFunds: budget
+    .val(),
     bank: bank
   };
   console.log(newAuthor)
