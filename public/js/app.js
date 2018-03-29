@@ -13,7 +13,7 @@ $(document).ready(function () {
         fullWidth: true,
       });
 
-      $('.sidenav').sidenav();
+    //   $('.sidenav').sidenav();
 
     //Upload profile picture
     var readURL = function (input) {
