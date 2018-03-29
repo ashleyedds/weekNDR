@@ -15,6 +15,7 @@ $(document).ready(function() {
   // Gets the part of the url that comes after the "?" (which we have if we're updating a post)
   var url = window.location.search;
   var postId;
+  var bigBudgetId;
   var authorId;
   // Sets a flag for whether or not we're updating a post to be false initially
   var updating = false;
