@@ -27,6 +27,8 @@ VALUES ('Tucker', 'Philbrook', 'tucker@email.com', 'abc123', 437, 89, NOW(), NOW
 
 
 
+
+
 INSERT INTO Posts (title, body, estCost, createdAt, updatedAt, AuthorId)
 VALUES ('movies', 'going out to movies and dinner with friends', 30, NOW(), NOW(), 1);
 INSERT INTO Posts (title, body, estCost, createdAt, updatedAt, AuthorId)
@@ -105,6 +107,25 @@ INSERT INTO Posts (title, body, estCost, createdAt, updatedAt, AuthorId)
 VALUES ('movies', 'going out to movies and dinner with friends', 30, NOW(), NOW(), 11);
 
 
+
+
+INSERT INTO BigBudgets (title, body, estCost, createdAt, updatedAt, AuthorId)
+VALUES ('car', 'saving up for a new car', 35000, NOW(), NOW(), 3);
+
+INSERT INTO BigBudgets (title, body, estCost, createdAt, updatedAt, AuthorId)
+VALUES ('ring', 'saving up for really nice ring', 1200, NOW(), NOW(), 7);
+
+INSERT INTO BigBudgets (title, body, estCost, createdAt, updatedAt, AuthorId)
+VALUES ('vacation', 'going to mexico for spring break', 2540, NOW(), NOW(), 1);
+
+INSERT INTO BigBudgets (title, body, estCost, createdAt, updatedAt, AuthorId)
+VALUES ('vacation', 'going on a cruise with my family', 5000, NOW(), NOW(), 9);
+
+
+
+
 SELECT * FROM Posts;
+
+SELECT * FROM BigBudgets;
 
 SELECT * FROM Authors;
