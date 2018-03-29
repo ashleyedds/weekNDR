@@ -6,3 +6,13 @@ form.login {
 .modebar{
   display: none !important;
 }
+
+
+th {
+  text-align: center;
+}
+
+
+td {
+  text-align: center;
+}
