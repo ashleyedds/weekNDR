@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <!-- Numeric JS -->
+  <!-- Numeric JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
@@ -21,7 +21,7 @@
 
 <body>
 
-  <div class="mobile-content">
+  <div class="mobile-content mobile-dashboard">
     <header>
       <div class="navbar-fixed">
         <nav>
@@ -68,40 +68,34 @@
         </h2>
       </div>
     </div>
-
-    <div class="row">
-      <div class="col s12 chart-div center-align">
-        <span>
-          <i class="material-icons left-swipe">chevron_left</i>
-        </span>
-        <div class="carousel carousel-slider">
-          <a class="carousel-item" href="#one!">
-            <img src="images/standinchart.png">
-          </a>
-          <a class="carousel-item" href="#two!">
-            <img src="images/standinbargraph.png">
-          </a>
-          <a class="carousel-item" href="#three!">
-            <img src="images/standingoalgraph.png">
-          </a>
-        </div>
-        <span>
-          <i class="material-icons right-swipe">chevron_right</i>
-        </span>
-      </div>
-    </div>
   </div>
+
+  <i class="material-icons swipe-left">chevron_left</i>
+  <div class="carousel carousel-slider">
+    <a class="carousel-item" href="#one!">
+      <img src="images/standinchart.png">
+    </a>
+    <a class="carousel-item" href="#two!">
+      <img src="images/standinbargraph.png">
+    </a>
+    <a class="carousel-item" href="#three!">
+      <img src="images/standingoalgraph.png">
+    </a>
+  </div>
+  <i class="material-icons swipe-right">chevron_right</i>
+
+
 
   <div class="tablet-desktop-dashboard">
     <header id="header" class="page-topbar">
       <div class="navbar-fixed dashboard-navbar">
         <nav class="navbar-color">
           <div class="nav-wrapper dashboard-wrapper">
-              <div class="nav-wrapper dashboard-nav">
-                  <a href="#" class="brand-logo">
-                    <img src="images/weekndr.png" class="desktop-dashboard-logo">
-                  </a>
-                </div>
+            <div class="nav-wrapper dashboard-nav">
+              <a href="#" class="brand-logo">
+                <img src="images/weekndr.png" class="desktop-dashboard-logo">
+              </a>
+            </div>
           </div>
         </nav>
       </div>
@@ -112,15 +106,44 @@
         <li>
           <div class="row dashboard-profile-row">
             <div class="col s12 center-align">
+
               <img id="userPic" src="images/profile.png" class="dashboard-desktop-profile responsive-img">
               <h2 class="dashboard-welcome desktop-welcome">Welcome
                   <span class="member-name"></span>
                 </h2>
             </div>
           </div>
+          <div class="row dashboard-profile-welcome">
+            <div class="col s12 center-align">
+              <h2 class="desktop-welcome">Welcome
+                <span class="member-name"></span>
+              </h2>
+            </div>
+          </div>
+        </li>
+        <li class="dashboard-link">
+          <a href="#">
+            <h3 class="dashboard-list center-align">Edit your budget</h3>
+          </a>
+        </li>
+        <li class="dashboard-link">
+          <a href="#">
+            <h3 class="dashboard-list center-align">Edit your profile</h3>
+          </a>
+        </li>
+        <li class="dashboard-link">
+          <a href="#">
+            <h3 class="dashboard-list center-align">Add an expense</h3>
+          </a>
+        </li>
+        <li class="dashboard-link">
+          <a href="#">
+            <h3 class="dashboard-list center-align">Log out</h3>
+          </a>
         </li>
       </ul>
     </aside>
+
 
     <div class="row">
       <div class="col s4 offset-s4">
@@ -133,15 +156,66 @@
             <div id="myDiv2">
           </div>
     </div>
+    <div class="desktop-dashboard-main container">
+      <div class="row desktop-icon-row">
+        <div class="col s2 center-align">
+          <img class="dashboard-icon responsive-img" src="images/movie.png">
+          <h4 class="desktop-budget">$0</h4>
+        </div>
+        <div class="col s2 center-align">
+          <img class="dashboard-icon responsive-img" src="images/music.png">
+          <h4 class="desktop-budget">$0</h4>
+        </div>
+        <div class="col s2 center-align">
+          <img class="dashboard-icon responsive-img" src="images/shopping.png">
+          <h4 class="desktop-budget">$0</h4>
+        </div>
+        <div class="col s2 center-align">
+          <img class="dashboard-icon responsive-img" src="images/food.png">
+          <h4 class="desktop-budget">$0</h4>
+        </div>
+        <div class="col s2 center-align">
+          <img class="dashboard-icon responsive-img" src="images/drinks.png">
+          <h4 class="desktop-budget">$0</h4>
+        </div>
+        <div class="col s2 center-align">
+          <img class="dashboard-icon responsive-img" src="images/outing.png">
+          <h4 class="desktop-budget">$0</h4>
+        </div>
+      </div>
+
+      <div class="row big-expense-row center-align">
+          <div class="col s4 offset-s8">
+            <div class="card small">
+              <div class="card-image">
+                <img class="big-expense-dashboard responsive-img" src="images/car.png">
+                <span class="card-title">Big Expense</span>
+              </div>
+              <div class="card-content">
+                <p>$$$</p>
+              </div>
+            </div>
+            <a class="waves-effect waves-light btn-large"><i class="material-icons left">local_movies</i>Movies near you</a>
+            <a class="waves-effect waves-light btn-large"><i class="material-icons left">music_note</i>Concerts and events near you</a>
+            <a class="waves-effect waves-light btn-large"><i class="material-icons left">local_dining</i>Food and drink near you</a>
+          </div>
+        </div>
+    </div>
+  </div>
+
+
 
 
 
   <!-- SCRIPT LINKS -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+
   crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 <script type="text/javascript" src="js/graphtest.js"></script>
+
+
 
 </body>
 

@@ -13,6 +13,12 @@ module.exports = function(app) {
   //   res.sendFile(path.join(__dirname, "../public/dashboard.html"));
   // });
 
+  // index route loads view.html
+  app.get("/dashboard", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/dashboard.html"));
+  });
+
+
   // cms route loads cms.html
   app.get("/cms", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/cms.html"));
