@@ -47,12 +47,13 @@ module.exports = function(app) {
           name: req.user.firstName,
           email: req.user.email,
           id: req.user.id,
-          pic: req.user.bank
+          bank: req.user.bank,
+          pic: req.user.imgUrl
         });
       }
     });
 
-  app.get("/api/test", middleware, function(req,res){
+  app.get("/api/get_interests", middleware, function(req,res){
       
       db.Interest.findAll({
           where:{
@@ -67,9 +68,30 @@ module.exports = function(app) {
         console.log(person);
 
       })
-      // .catch(function(err){
-      //     console.log(err);
-      // })
-      // res.send("test");
   })
+
+      
+  app.put("/api/update_cost", function(req, res) {
+    db.Interest.update(
+      req.body,
+      {
+        where: {
+          id: req.body.id
+        }
+      }).then(function(dbPost) {
+      res.json(dbPost);
+    });
+  });
+
+  app.put("/api/update_bank", function(req, res) {
+    db.Person.update(
+      req.body,
+      {
+        where: {
+          id: req.body.id
+        }
+      }).then(function(dbPost) {
+      res.json(dbPost);
+    });
+  });
 };
