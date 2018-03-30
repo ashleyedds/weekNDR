@@ -189,6 +189,19 @@
   left: 16%;
 }
 
+img.welcome-image {
+  height: 205px;
+}
+
+.btn-floating.btn-large {
+  width: 120px;
+  height: 120px;
+  left: 3%;
+  bottom: 44%;
+  position: absolute;
+  background-color: #a7ff84;
+}
+
 
 
 /* DASHBOARD */
@@ -350,8 +363,13 @@ nav .nav-dashboard {
       right: 43%;
       top: 61%;
     }
+
+    .swipe-left, .swipe-right:hover {
+      cursor: pointer;
+    }
   
   }
+
 
 
 

@@ -13,6 +13,14 @@ $(document).ready(function () {
         numVisible: 0
     });
 
+    $(".swipe-left").click(function(){
+        $(".carousel.carousel-slider").carousel("prev");
+    });
+
+    $(".swipe-right").click(function(){
+        $(".carousel.carousel-slider").carousel("next");
+    });
+
 
     //Upload profile picture
     var readURL = function (input) {
