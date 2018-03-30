@@ -5,8 +5,9 @@ $(document).ready(function() {
     var userId;
 
     $.get("/api/user_data").then(function(data) {
-        $(".member-name").text(data.email);
-        $("#userPic").attr("src", data.pic);
+        $(".member-name").text(data.name);
+        $(".dashboard-desktop-profile").attr("src", data.pic);
+        $(".dashboard-profile").attr("src", data.pic);
         userId = data.Id;
       });
 
