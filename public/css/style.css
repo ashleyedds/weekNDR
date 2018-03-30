@@ -350,8 +350,16 @@ nav .nav-dashboard {
       right: 43%;
       top: 61%;
     }
+
+    .swipe-left, .swipe-right:hover {
+      cursor: pointer;
+    }
   
   }
+
+  /* #myDiv2, #myDiv3 {
+    display: none;
+  } */
 
 
 
