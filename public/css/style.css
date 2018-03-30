@@ -25,7 +25,7 @@
       .mobile-content {
         display: inline;
       }
-      .tablet-desktop-content {
+      .tablet-desktop-content, .tablet-desktop-dashboard {
         display: none;
       }
       nav .nav-landing {
@@ -34,8 +34,30 @@
       .landing-login {
         font-size: 40px;
         margin: 25px;
-      }
-  }
+      }         
+      .carousel.carousel-slider {
+        top: 58px;
+        left: 16px;
+        max-width: 90vw;
+    }
+      .swipe-left {
+        position: fixed;
+        top: 61%;
+    }
+      .swipe-right {
+        position: fixed;
+        right: 0;
+        top: 61%;
+    }
+
+    .dashboard-html {
+      background: linear-gradient(to bottom, rgba(22,185,122,1) 0%, rgba(167,255,132,1) 100%) no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;;
+    }
+}
 
   nav .nav-wrapper {
       background-color: #046971;
@@ -172,9 +194,6 @@
 /* DASHBOARD */
 
 /* MOBILE */
-.dashboard-html {
-  background-color: #fff;
-}
 
 nav .nav-dashboard {
   background-color: #046971;
@@ -196,26 +215,6 @@ nav .nav-dashboard {
   left: 39%;
 }
 
-.chart-div {
-  margin-top: 18%;
-}
-
-.left-swipe {
-  float: left;
-  position: absolute;
-  z-index: 5;
-  left: 0;
-  bottom: 35%;
-}
-
-.right-swipe {
-  float: right;
-  position: absolute;
-  z-index: 5;
-  right: 0;
-  bottom: 35%;
-}
-
 /* DEKTOP AND TABLET */
 .desktop-dashboard-logo {
   max-height: 68px;
@@ -234,14 +233,123 @@ nav .nav-dashboard {
 }
 
 .side-nav.fixed {
-  top: 7%;
+  top: 6%;
+  max-width: 20%;
 }
 
 .dashboard-profile-row {
-  background-color: #a7ff84;
+  background: linear-gradient(to bottom, rgba(22,183,122,1) 0%, rgba(167,255,132,1) 100%);
+  margin-bottom: 0;
 }
 
 .dashboard-desktop-profile {
   max-height: 200px;
-  margin-top: 5%;
+  margin-top: 13%;
 }
+
+.desktop-welcome {
+  font-family: 'Saira Condensed', sans-serif;
+  color: #081853;
+  font-size: 30px;
+}
+
+.dashboard-profile-welcome {
+  background-color: #a7ff84;
+}
+
+.dashboard-list {
+  font-family: 'Saira Condensed', sans-serif;
+  color: #081853;
+  font-size: 25px;
+  padding-top: 5%;
+}
+
+.dashboard-link:hover {
+  background-color: #a7ff84;
+}
+
+.desktop-icon-row {
+  position: absolute;
+  left: 22%;
+  width: 100%;
+  max-width: 75vw;
+}
+
+.dashboard-icon {
+  max-height: 100px;
+  margin: 15%;
+}
+
+.desktop-budget-row {
+  position: absolute;
+  top: 30%;
+  left: 27%;
+}
+
+.desktop-budget {
+  font-family: 'Saira Condensed', sans-serif;
+  color: #081853;
+  font-size: 30px;
+  margin: 0;
+}
+
+.card .card-image img {
+  height: 179px;
+  width: 200px;
+  left: 24%;
+}
+
+.card.small .card-image+.card-content {
+  position: absolute;
+  top: 75%;
+  width: 50%;
+  left: 24%;
+  position: absolute;
+}
+
+.card .card-image .card-title{
+  top: 60%;
+  left: 30%;
+  font-family: 'Saira Condensed', sans-serif;
+  color: #081853;
+}
+
+.big-expense-row {
+  position: relative;
+  top: 215px;
+  left: 107px;
+  z-index: -10;
+}
+
+.btn-large {
+  margin: 15px;
+  background-color: #081853;
+}
+
+@media only screen 
+    and (min-device-width : 481px) {
+    .carousel.carousel-slider{
+      position: absolute;
+      max-width: 30vw;
+      min-height: 56vh;
+      top: 36%;
+      left: 23%;
+    }
+    .swipe-left {
+      position: fixed;
+      top: 61%;
+      z-index: 20;
+      left: 19%;
+    }
+    .swipe-right {
+      position: fixed;
+      z-index: 20;
+      right: 43%;
+      top: 61%;
+    }
+  
+  }
+
+
+
+
