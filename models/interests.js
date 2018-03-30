@@ -7,14 +7,9 @@ module.exports = function(sequelize, DataTypes) {
           len: [1,160]
         }
       },
-      body: {
-        type: DataTypes.TEXT,
-        allowNull: false,
-        len: [1]
-      },
       estCost: {
         type: DataTypes.INTEGER,
-        allowNull: true
+        allowNull: false
       },
       actualCost: {
         type: DataTypes.INTEGER,
@@ -26,15 +21,15 @@ module.exports = function(sequelize, DataTypes) {
       }
     });
   
-    Interest.associate = function(models) {
-      // We're saying that a Post should belong to an Author
-      // A Post can't be created without an Author due to the foreign key constraint
-      Interest.belongsTo(models.Person, {
-        foreignKey: {
-          allowNull: false
-        }
-      });
-    };
+     Interest.associate = function(models) {
+    //   // We're saying that a Post should belong to an Author
+    //   // A Post can't be created without an Author due to the foreign key constraint
+       Interest.belongsTo(models.Person, {
+         foreignKey: {
+           allowNull: false
+         }
+       });
+     };
   
     return Interest;
   };

@@ -16,7 +16,7 @@ $(document).ready(function() {
       })
     
       function addInterests(userInterests) {
-        $.post("/api/interests", {interests: userInterests}, function() {
+        $.post("/api/interests", userInterests, function() {
             getInterests();
         })
       }

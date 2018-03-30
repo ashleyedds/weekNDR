@@ -1,6 +1,6 @@
 // Requiring path to so we can use relative routes to our HTML files
 var path = require("path");
-
+var isAuthenticated = require('../config/middleware/isAuthenticated');
 // Requiring our custom middleware for checking if a user is logged in
 
 module.exports = function(app) {
@@ -9,6 +9,9 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/landing.html"));
   });
+  // app.get("/dashboard", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/dashboard.html"));
+  // });
 
   // cms route loads cms.html
   app.get("/cms", function(req, res) {
@@ -28,6 +31,10 @@ module.exports = function(app) {
   // authors route loads author-manager.html
   app.get("/authors", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/author-manager.html"));
+  });
+
+  app.get("/dashboard", isAuthenticated, function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/dashboard.html"));
   });
 
 };

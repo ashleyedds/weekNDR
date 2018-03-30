@@ -245,3 +245,7 @@ nav .nav-dashboard {
   max-height: 200px;
   margin-top: 5%;
 }
+
+.modebar{
+  display: none !important;
+}

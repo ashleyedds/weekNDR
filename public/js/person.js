@@ -39,7 +39,7 @@ $(document).ready(function() {
   })
 
   function createPerson(personData) {
-      $.post("/api/person", personData)
+      $.post("/api/signup", personData)
       .then()
   }
 })
