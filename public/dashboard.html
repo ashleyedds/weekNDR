@@ -189,9 +189,83 @@
                 <p>$$$</p>
               </div>
             </div>
-            <a class="waves-effect waves-light btn-large"><i class="material-icons left">local_movies</i>Movies near you</a>
-            <a class="waves-effect waves-light btn-large"><i class="material-icons left">music_note</i>Concerts and events near you</a>
-            <a class="waves-effect waves-light btn-large"><i class="material-icons left">local_dining</i>Food and drink near you</a>
+            <body>
+                <div class=" map-container">
+                  <div class="row" id="search-options">
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal7" id="movies-search">Movies</a>
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal7" id="concert-search">Concert</a>
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal7" id="dinner-search">Dinner</a>
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal7" id="shopping-search">Shopping</a>
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal7" id="drinks-search">Drinks</a>
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal7" id="outting-search">Outting</a>
+                  </div>
+                  
+                  <div id="modal7" class="modal modal-fixed-footer">
+                      <div class="containter">
+                          <div class="modal-content">
+                              <div class="row">
+                                  <div class="col s6">
+                                      <div id="findPlaces">
+                                      Find Places in:
+                                      </div>
+                                  </div>
+                          
+                                  <div class="col s6">
+                                    <div id="locationField">
+                                      <input id="autocomplete" placeholder="Enter a city" type="text" />
+                                    </div>
+                                  </div>
+                                  <div class="hide" id="controls">
+                                    <select id="country">
+                                        <option value="us" selected>U.S.A.</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col s6">
+                                    <div id="map"></div>
+                                  </div>
+                                  <div class="col s6">
+                                    <div id="listing">
+                                      <table id="resultsTable">
+                                          <tbody id="results"></tbody>
+                                      </table>
+                                    </div>
+                                  </div>
+                                  <div style="display: none">
+                                    <div id="info-content">
+                                      <table>
+                                        <tr id="iw-url-row" class="iw_table_row">
+                                            <td id="iw-icon" class="iw_table_icon"></td>
+                                            <td id="iw-url"></td>
+                                        </tr>
+                                        <tr id="iw-address-row" class="iw_table_row">
+                                            <td class="iw_attribute_name">Address:</td>
+                                            <td id="iw-address"></td>
+                                        </tr>
+                                        <tr id="iw-phone-row" class="iw_table_row">
+                                            <td class="iw_attribute_name">Telephone:</td>
+                                            <td id="iw-phone"></td>
+                                        </tr>
+                                        <tr id="iw-rating-row" class="iw_table_row">
+                                            <td class="iw_attribute_name">Rating:</td>
+                                            <td id="iw-rating"></td>
+                                        </tr>
+                                        <tr id="iw-website-row" class="iw_table_row">
+                                            <td class="iw_attribute_name">Website:</td>
+                                            <td id="iw-website"></td>
+                                        </tr>
+                                      </table>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                          <div class="modal-footer">
+                              <a class="modal-action modal-close waves-effect waves-teal btn-flat">Search</a>
+                          </div>
+                      </div>
+                  </div>
           </div>
         </div>
     </div>
@@ -207,6 +281,10 @@
   crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/graphtest.js"></script>
+<script src="js/places.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPZat5SwYNca_vY6tcqhLq1_wi5_lVoIY&libraries=places&callback=initMap"
+    async defer></script>
 <script type="text/javascript" src="js/dashboard.js"></script>
 
 
