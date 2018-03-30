@@ -49,10 +49,16 @@
 
       <ul class="side-nav" id="mobile-demo">
         <li>
-          <a href="#">Edit budget</a>
+          <a class="modal-trigger" href="#dash-modal1">Add Expense</a>
         </li>
         <li>
-          <a href="#">Edit profile</a>
+          <a class="modal-trigger" href="#dash-modal2">Plan your weekend</a>
+        </li>
+        <li>
+          <a class="modal-trigger" href="#dash-modal3">Edit budget</a>
+        </li>
+        <li>
+          <a class="modal-trigger" href="#dash-modal4">Edit profile</a>
         </li>
         <li>
           <a href="#">Logout</a>
@@ -116,18 +122,18 @@
           </div>
         </li>
         <li class="dashboard-link">
-          <a href="#">
+          <a class="modal-trigger" href="#dash-modal1">
+            <h3 class="dashboard-list center-align">Add an expense</h3>
+          </a>
+        </li>
+        <li class="dashboard-link">
+          <a class="modal-trigger" href="#dash-modal3">
             <h3 class="dashboard-list center-align">Edit your budget</h3>
           </a>
         </li>
         <li class="dashboard-link">
-          <a href="#">
+          <a class="modal-trigger" href="#dash-modal4">
             <h3 class="dashboard-list center-align">Edit your profile</h3>
-          </a>
-        </li>
-        <li class="dashboard-link">
-          <a href="#">
-            <h3 class="dashboard-list center-align">Add an expense</h3>
           </a>
         </li>
         <li class="dashboard-link">
@@ -139,17 +145,6 @@
     </aside>
 
 
-    <!-- <div class="row">
-      <div class="col s4 offset-s4">
-        <div id="myDiv3">
-      </div>
-    </div>
-
-    <div class="row">
-        <div class="col s4 offset-s4">
-            <div id="myDiv2">
-          </div>
-    </div> -->
     <div class="desktop-dashboard-main container">
       <div class="row desktop-icon-row">
         <div class="col s2 center-align">
@@ -179,35 +174,315 @@
       </div>
 
       <div class="row big-expense-row center-align">
-          <div class="col s4 offset-s8">
-            <div class="card small">
-              <div class="card-image">
-                <img class="big-expense-dashboard responsive-img" src="images/car.png">
-                <span class="card-title">Big Expense</span>
-              </div>
-              <div class="card-content">
-                <p>$$$</p>
-              </div>
+        <div class="col s4 offset-s8">
+          <div class="card small">
+            <div class="card-image">
+              <img class="big-expense-dashboard responsive-img" src="images/car.png">
+              <span class="card-title">Big Expense</span>
             </div>
-            <a class="waves-effect waves-light btn-large"><i class="material-icons left">local_movies</i>Movies near you</a>
-            <a class="waves-effect waves-light btn-large"><i class="material-icons left">music_note</i>Concerts and events near you</a>
-            <a class="waves-effect waves-light btn-large"><i class="material-icons left">local_dining</i>Food and drink near you</a>
+            <div class="card-content">
+              <p>$$$</p>
+            </div>
+          </div>
+          <a class="waves-effect waves-light btn-large">
+            <i class="material-icons left">local_movies</i>Movies near you</a>
+          <a class="waves-effect waves-light btn-large">
+            <i class="material-icons left">music_note</i>Concerts and events near you</a>
+          <a class="waves-effect waves-light btn-large">
+            <i class="material-icons left">local_dining</i>Food and drink near you</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- MODALS -->
+  <!-- Modal Structure -->
+  <div id="dash-modal1" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4 class="modal-title">What did you spend money on? How much?</h4>
+      <form>
+        <div class="row">
+          <div class="col s4">
+            <p>
+              <img class="movie-icon" src="images/movie.png">
+              <input type="checkbox" id="movie-btn">
+              <label for="movie-btn">
+                <span>Movies</span>
+              </label>
+              <div class="input-field inline">
+                <input disabled id="movie_amount" type="text" class="validate">
+                <label for="movie_amount">$$$</label>
+              </div>
+            </p>
+          </div>
+          <div class="col s4">
+            <p>
+              <img class="concert-icon" src="images/music.png">
+              <input type="checkbox" id="concert-btn">
+              <label for="concert-btn">
+                <span>Concerts</span>
+              </label>
+              <div class="input-field inline">
+                <input disabled id="concert_amount" type="text" class="validate">
+                <label for="concert_amount">$$$</label>
+              </div>
+            </p>
+          </div>
+          <div class="col s4">
+            <p>
+              <img class="shopping-icon" src="images/shopping.png">
+              <input type="checkbox" id="shopping-btn">
+              <label for="shopping-btn">
+                <span>Shopping</span>
+              </label>
+              <div class="input-field inline">
+                <input disabled id="shopping_amount" type="text" class="validate">
+                <label for="shopping_amount">$$$</label>
+              </div>
+            </p>
           </div>
         </div>
+        <div class="row">
+          <div class="col s4">
+            <p>
+              <img class="dinner-icon" src="images/food.png">
+              <input type="checkbox" id="dinner-btn">
+              <label for="dinner-btn">
+                <span>Eating out</span>
+              </label>
+              <div class="input-field inline">
+                <input disabled id="dinner_amount" type="text" class="validate">
+                <label for="dinner_amount">$$$</label>
+              </div>
+            </p>
+          </div>
+          <div class="col s4">
+            <p>
+              <img class="drinks-icon" src="images/drinks.png">
+              <input type="checkbox" id="drinks-btn">
+              <label for="drinks-btn">
+                <span>Drinks</span>
+              </label>
+              <div class="input-field inline">
+                <input disabled id="drinks_amount" type="text" class="validate">
+                <label for="drinks_amount">$$$</label>
+              </div>
+            </p>
+          </div>
+          <div class="col s4">
+            <p>
+              <img class="outing-icon" src="images/outing.png">
+              <input type="checkbox" id="outing-btn">
+              <label for="outing-btn">
+                <span>Outings</span>
+              </label>
+              <div class="input-field inline">
+                <input disabled id="outing_amount" type="text" class="validate">
+                <label for="outing_amount">$$$</label>
+              </div>
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-teal btn-flat">Submit</a>
+    </div>
+  </div>
+
+  <div id="dash-modal2" class="modal modal-fixed-footer">
+    <div class="modal-content center-align">
+      <a class="waves-effect waves-light btn-large">
+        <i class="material-icons left">local_movies</i>Movies</a>
+      <a class="waves-effect waves-light btn-large">
+        <i class="material-icons left">music_note</i>Concerts/Events</a>
+      <a class="waves-effect waves-light btn-large">
+        <i class="material-icons left">local_dining</i>Food/Drink</a>
+      <img class="weekend-pic" src="images/cool.png">
+      <div>Icons made by
+        <a href="http://www.freepik.com" title="Freepik">Freepik</a> from
+        <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by
+        <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
+          target="_blank">CC 3.0 BY</a>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-teal btn-flat">Done</a>
+    </div>
+  </div>
+
+  <div id="dash-modal3" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4 class="modal-title">What is your new discretionary budget per week?</h4>
+      <div class="budget-box center-align row">
+        <div class="col s12">
+          $:
+          <div class="input-field inline valign-wrapper">
+            <input id="budget" type="budget" class="validate">
+          </div>
+        </div>
+      </div>
+      <div class="row center-align">
+        <div class="col s12">
+          <img src="images/money.png">
+          <div>Icons made by
+            <a href="http://www.freepik.com" title="Freepik">Freepik</a> from
+            <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by
+            <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
+              target="_blank">CC 3.0 BY</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-teal btn-flat">Submit</a>
+    </div>
+  </div>
+
+  <div id="dash-modal4" class="modal modal-footer-fixed">
+    <div class="modal-content">
+      <h4 class="modal-title">What are we updating?</h4>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="first_name" type="text" class="validate">
+              <label for="first_name">First Name</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="last_name" type="text" class="validate">
+              <label for="last_name">Last Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="password" type="password" class="validate">
+              <label for="password">Password</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="email" type="email" class="validate">
+              <label for="email">Email</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#dash-modal5" class="modal-close modal-trigger waves-effect waves-teal btn-flat">Next</a>
+    </div>
+  </div>
+
+  <div id="dash-modal5" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4 class="modal-title">Want to change your pic? Upload a profile picture or choose from one below</h4>
+      <div class="row">
+        <div class="col s6">
+          <img class="profile-pic circle" src="images/profile.png">
+          <a class="upload-button waves-effect waves-light btn">Upload</a>
+          <input class="file-upload" type="file" accept="image/*" />
+        </div>
+        <div class="col s6">
+          <form action="#">
+            <div class="row">
+              <div class="col s4">
+                <p>
+                  <img class="profile-one" src="images/profile1.png">
+                  <input id="profile-one" class="with-gap" name="group3" type="radio">
+                  <label for="profile-one">
+                  </label>
+                </p>
+              </div>
+              <div class="col s4">
+                <p>
+                  <img class="profile-two" src="images/profile2.png">
+                  <input id="profile-two" class="with-gap" name="group3" type="radio">
+                  <label for="profile-two">
+                  </label>
+                </p>
+              </div>
+              <div class="col s4">
+                <p>
+                  <img class="profile-three" src="images/profile3.png">
+                  <input id="profile-three" class="with-gap" name="group3" type="radio">
+                  <label for="profile-three">
+                  </label>
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s4">
+                <p>
+                  <img class="profile-four" src="images/profile4.png">
+                  <input id="profile-four" class="with-gap" name="group3" type="radio">
+                  <label for="profile-four">
+                  </label>
+                </p>
+              </div>
+              <div class="col s4">
+                <p>
+                  <img class="profile-five" src="images/profile5.png">
+                  <input id="profile-five" class="with-gap" name="group3" type="radio">
+                  <label for="profile-five">
+                  </label>
+                </p>
+              </div>
+              <div class="col s4">
+                <p>
+                  <img class="profile-six" src="images/profile6.png">
+                  <input id="profile-six" class="with-gap" name="group3" type="radio">
+                  <label for="profile-six">
+                  </label>
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s4">
+                <p>
+                  <img class="profile-seven" src="images/profile7.png">
+                  <input id="profile-seven" class="with-gap" name="group3" type="radio">
+                  <label for="profile-seven">
+                  </label>
+                </p>
+              </div>
+              <div class="col s4">
+                <p>
+                  <img class="profile-eight" src="images/profile8.png">
+                  <input id="profile-eight" class="with-gap" name="group3" type="radio">
+                  <label for="profile-eight">
+                  </label>
+                </p>
+              </div>
+              <div class="col s4">
+                <p>
+                  <img class="profile-nine" src="images/profile9.png">
+                  <input id="profile-nine" class="with-gap" name="group3" type="radio">
+                  <label for="profile-nine">
+                  </label>
+                </p>
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-action modal-trigger modal-close waves-effect waves-teal btn-flat">Update</a>
     </div>
   </div>
 
 
 
 
-
   <!-- SCRIPT LINKS -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-
-  crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-<script type="text/javascript" src="js/app.js"></script>
-<script type="text/javascript" src="js/graphtest.js"></script>
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/graphtest.js"></script>
 
 
 

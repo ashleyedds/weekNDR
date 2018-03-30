@@ -186,7 +186,7 @@
 .upload-button {
   position: absolute;
   top: 62%;
-  left: 16%;
+  left: 15.5%;
 }
 
 img.welcome-image {
@@ -202,6 +202,9 @@ img.welcome-image {
   background-color: #a7ff84;
 }
 
+.weekend-pic {
+  height: 128px;
+}
 
 
 /* DASHBOARD */
