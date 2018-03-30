@@ -14,8 +14,6 @@ $(document).ready(function () {
     });
 
 
-    
-
     //Upload profile picture
     var readURL = function (input) {
         if (input.files && input.files[0]) {

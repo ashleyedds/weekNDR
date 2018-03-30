@@ -37,7 +37,8 @@ $(document).ready(function() {
     .val(),
     password: password
     .val(),
-    weeklyFunds: budget.val(),
+    weeklyFunds: budget
+    .val(),
     bank: bank
   };
   console.log(newAuthor)
@@ -55,6 +56,8 @@ $(document).ready(function() {
     var newTr = $("<tr>");
     newTr.data("user", authorData);
     newTr.append("<td>" + authorData.firstName + "</td>");
+    newTr.append("<td>" + authorData.weeklyFunds + "</td>");
+    newTr.append("<td>" + authorData.bank + "</td>");
     newTr.append("<td> " + authorData.Posts.length + "</td>");
     newTr.append("<td><a href='/blog?author_id=" + authorData.id + "'>Go to Interests</a></td>");
     newTr.append("<td><a href='/cms?author_id=" + authorData.id + "'>Create a Interest</a></td>");

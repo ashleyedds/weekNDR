@@ -10,9 +10,20 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/landing.html"));
   });
 
+  // index route loads view.html
+  app.get("/dashboard", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/dashboard.html"));
+  });
+
+
   // cms route loads cms.html
   app.get("/cms", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/cms.html"));
+  });
+
+  // cms route loads cms.html
+  app.get("/bigBudget", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/bigBudget.html"));
   });
 
   // blog route loads blog.html

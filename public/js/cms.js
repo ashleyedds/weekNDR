@@ -15,6 +15,7 @@ $(document).ready(function() {
   // Gets the part of the url that comes after the "?" (which we have if we're updating a post)
   var url = window.location.search;
   var postId;
+  var bigBudgetId;
   var authorId;
   // Sets a flag for whether or not we're updating a post to be false initially
   var updating = false;
@@ -40,33 +41,6 @@ $(document).ready(function() {
     if (!titleInput.val().trim() || !bodyInput.val().trim() || !authorSelect.val()) {
       return;
     }
-    // Constructing a newPost object to hand to the database
-      // var Post = sequelize.define("Post", {
-  //   title: {
-  //     type: DataTypes.STRING,
-  //     allowNull: false,
-  //     validate: {
-  //       len: [1,160]
-  //     }
-  //   },
-  //   body: {
-  //     type: DataTypes.TEXT,
-  //     allowNull: false,
-  //     len: [1]
-  //   },
-  //   estCost: {
-  //     type: DataTypes.INTEGER,
-  //     allowNull: true
-  //   },
-  //   actualCost: {
-  //     type: DataTypes.INTEGER,
-  //     allowNull: true
-  //   },
-  //   eventDate: {
-  //     type: DataTypes.DATE,
-  //     allowNull: true
-  //   }
-  // });
     var newPost = {
       title: titleInput
         .val()
@@ -77,13 +51,6 @@ $(document).ready(function() {
       estCost: estCost
         .val(),
       AuthorId: authorSelect.val()
-        // Getting jQuery references to the post body, title, form, and author select
-  // var titleInput = $("#title");
-  // var bodyInput = $("#body");
-  // var estCost = $("#estCost");
-  // var actualCost = $("#actualCost");
-  // var eventDate = $("#eventDate");
-  // var currentDate = $("#currentDate");
     };
 
     // If we're updating a post run updatePost to update a post
