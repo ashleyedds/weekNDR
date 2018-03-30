@@ -10,10 +10,9 @@ $(document).ready(function () {
     $(".button-collapse").sideNav();
 
     $('.carousel.carousel-slider').carousel({
-        fullWidth: true,
-      });
+        numVisible: 0
+    });
 
-    //   $('.sidenav').sidenav();
 
     //Upload profile picture
     var readURL = function (input) {
@@ -83,6 +82,53 @@ $(document).ready(function () {
     });
     $("#outing-btn").on("click", function () {
         $("#outing_amount").prop("disabled", false);
+    });
+
+    //Big Expenses
+    $("#vacation-btn").on("click", function () {
+        $("#big_amount").prop("disabled", false);
+        var x = document.getElementById("car");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+        var x = document.getElementById("ring");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    });
+    $("#car-btn").on("click", function () {
+        $("#big_amount").prop("disabled", false);
+        var x = document.getElementById("vacation");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+        var x = document.getElementById("ring");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    });
+    $("#ring-btn").on("click", function () {
+        $("#big_amount").prop("disabled", false);
+        var x = document.getElementById("car");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+        var x = document.getElementById("vacation");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
     });
 
 });
