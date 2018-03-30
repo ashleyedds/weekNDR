@@ -27,7 +27,7 @@ $(document).ready(function() {
   })
 
   $("#picSubmit").on("click", function() {
-      newPerson.bank = $(".profile-pic").attr("src");
+      newPerson.imgUrl = $(".profile-pic").attr("src");
       console.log(newPerson);
   })
 

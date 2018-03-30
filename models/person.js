@@ -22,8 +22,13 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false
       },
       bank: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        default: 0
+      },
+      imgUrl: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
       }
     });
   

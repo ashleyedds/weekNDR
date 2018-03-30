@@ -11,13 +11,19 @@ $(document).ready(function() {
         userId = data.Id;
       });
 
+    $("#logout-button").on("click", function() {
+        $.get("/api/logout").then(function() {
+            console.log("you are logged out");
+        })
+    })  
+
     if (url === "http://localhost:8080/dashboard") {
         getInterestList();
         console.log("this worked")
     }
 
     function getInterestList() {
-        $.get("/api/test", function(data) {
+        $.get("/api/get_interests", function(data) {
             console.log("api worked" + data[0].title);
             // window.location.href = "/dashtest";
             getInterests(data)
