@@ -1,21 +1,21 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     var url = window.location.href;
     console.log(url);
     var userId;
 
-    $.get("/api/user_data").then(function(data) {
+    $.get("/api/user_data").then(function (data) {
         $(".member-name").text(data.name);
         $(".dashboard-desktop-profile").attr("src", data.pic);
         $(".dashboard-profile").attr("src", data.pic);
         userId = data.Id;
-      });
+    });
 
-    $("#logout-button").on("click", function() {
-        $.get("/api/logout").then(function() {
+    $("#logout-button").on("click", function () {
+        $.get("/api/logout").then(function () {
             console.log("you are logged out");
         })
-    })  
+    })
 
     if (url === "http://localhost:8080/dashboard") {
         getInterestList();
@@ -23,18 +23,38 @@ $(document).ready(function() {
     }
 
     function getInterestList() {
-        $.get("/api/get_interests", function(data) {
+        $.get("/api/get_interests", function (data) {
             console.log("api worked" + data[0].title);
             // window.location.href = "/dashtest";
             getInterests(data)
             getBarChart(data);
+            displayInterestBudget(data);
         });
 
-      }
+    }
 
-      function getInterests(data) {
-          console.log(data);
-          console.log("Something Happened")
+    function displayInterestBudget(data) {
+        console.log(data);
+        for (let i = 0; i < data.length; i++) {
+            if (data[i].title === "Movies") {
+                $(".movie-bucket").html("$" + data[i].estCost);
+            } else if (data[i].title === "Concerts") {
+                $(".music-bucket").html("$" + data[i].estCost);
+            } else if (data[i].title === "Shopping") {
+                $(".shopping-bucket").html("$" + data[i].estCost);
+            } else if (data[i].title === "Eating Out") {
+                $(".food-bucket").html("$" + data[i].estCost);
+            } else if (data[i].title === "Drinks") {
+                $(".drinks-bucket").html("$" + data[i].estCost);
+            } else if (data[i].title === "Outings") {
+                $(".outing-bucket").html("$" + data[i].estCost);
+            }
+        }
+    }
+
+    function getInterests(data) {
+        console.log(data);
+        console.log("Something Happened")
         var dataPlotly = [{
             values: [],
             labels: [],
@@ -46,56 +66,56 @@ $(document).ready(function() {
 
 
         for (let i = 0; i < data.length; i++) {
-            
-                var cost = parseInt(data[i].estCost);
-                var title = data[i].title;
 
-        
-                    dataPlotly[0].values.push(cost);
-                    dataPlotly[0].labels.push(title);
-                        if (i === data.length -1) {
-                            Plotly.newPlot('myDiv3', dataPlotly);
+            var cost = parseInt(data[i].estCost);
+            var title = data[i].title;
 
-                            console.log(dataPlotly); 
-                        }
-                    }
-      }
 
-            function getBarChart(res) {
+            dataPlotly[0].values.push(cost);
+            dataPlotly[0].labels.push(title);
+            if (i === data.length - 1) {
+                Plotly.newPlot('myDiv3', dataPlotly);
+
+                console.log(dataPlotly);
+            }
+        }
+    }
+
+    function getBarChart(res) {
         var trace1 = {
             x: [],
             y: [],
             name: 'Estimated Cost',
             type: 'bar'
-          };
-          
-          var trace2 = {
+        };
+
+        var trace2 = {
             x: [],
             y: [],
             name: 'Actual Cost',
             type: 'bar'
-          };
-          
-          var data = [trace1, trace2];
-          
-          var layout = {barmode: 'group'};
+        };
 
-          for (let i = 0; i < res.length; i++) {
-      
+        var data = [trace1, trace2];
+
+        var layout = { barmode: 'group' };
+
+        for (let i = 0; i < res.length; i++) {
+
             var cost = parseInt(res[i].estCost);
             var title = res[i].title;
 
- 
+
             trace1.x.push(title);
             trace2.x.push(title);
             trace1.y.push(cost);
             trace2.y.push(cost - 4)
-                if (i === res.length -1) {
-                    Plotly.newPlot('myDiv2', data, layout);
+            if (i === res.length - 1) {
+                Plotly.newPlot('myDiv2', data, layout);
 
-                }
             }
-          
-      }
+        }
+
+    }
 
 })
