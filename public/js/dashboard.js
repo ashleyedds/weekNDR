@@ -28,6 +28,7 @@ $(document).ready(function () {
             // window.location.href = "/dashtest";
             getInterests(data)
             getBarChart(data);
+            getBigBudget(data);
             displayInterestBudget(data);
         });
 
@@ -52,6 +53,14 @@ $(document).ready(function () {
         }
     }
 
+      function getBigBudget(data) {
+        var r = data[3];
+        console.log("Budget: " + r);
+        var bigCost = r.estCost;
+        console.log("Cost: " + bigCost);
+        $("#bigCost").html("$" + bigCost);
+      }
+
     function getInterests(data) {
         console.log(data);
         console.log("Something Happened")
@@ -64,22 +73,22 @@ $(document).ready(function () {
             }
         }];
 
+        for (let i = 0; i < data.length -1; i++) {
+            
+                var cost = parseInt(data[i].estCost);
+                var title = data[i].title;
 
-        for (let i = 0; i < data.length; i++) {
+        
+                    dataPlotly[0].values.push(cost);
+                    dataPlotly[0].labels.push(title);
+                        if (i === data.length -2) {
+                            Plotly.newPlot('myDiv3', dataPlotly);
 
-            var cost = parseInt(data[i].estCost);
-            var title = data[i].title;
+                            console.log(dataPlotly); 
+                        }
+                    }
+      }
 
-
-            dataPlotly[0].values.push(cost);
-            dataPlotly[0].labels.push(title);
-            if (i === data.length - 1) {
-                Plotly.newPlot('myDiv3', dataPlotly);
-
-                console.log(dataPlotly);
-            }
-        }
-    }
 
     function getBarChart(res) {
         var trace1 = {
@@ -94,14 +103,16 @@ $(document).ready(function () {
             y: [],
             name: 'Actual Cost',
             type: 'bar'
+          };
+          
+          var data = [trace1, trace2];
+          
+          var layout = {barmode: 'group'};
+
+          for (let i = 0; i < res.length -1; i++) {
+      
         };
-
-        var data = [trace1, trace2];
-
-        var layout = { barmode: 'group' };
-
-        for (let i = 0; i < res.length; i++) {
-
+      
             var cost = parseInt(res[i].estCost);
             var title = res[i].title;
 
@@ -110,8 +121,10 @@ $(document).ready(function () {
             trace2.x.push(title);
             trace1.y.push(cost);
             trace2.y.push(cost - 4)
-            if (i === res.length - 1) {
-                Plotly.newPlot('myDiv2', data, layout);
+
+                if (i === res.length -2) {
+                    Plotly.newPlot('myDiv2', data, layout);
+                 
 
             }
         }
