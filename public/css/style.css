@@ -257,9 +257,9 @@ nav .nav-dashboard {
   background: linear-gradient(to bottom, rgba(22,183,122,1) 0%, rgba(167,255,132,1) 100%);
   margin-bottom: 0;
 }
-.modebar{
+/* .modebar{
   display: none !important;
-}
+} */
 
 .dashboard-desktop-profile {
   max-height: 200px;
