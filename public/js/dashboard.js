@@ -37,9 +37,9 @@ $(document).ready(function () {
     getInterestList();
 
     function getBigBudget(data) {
-        var r = data[3];
+        var r = data.length - 1;
         console.log("Budget: " + r);
-        var bigCost = r.estCost;
+        var bigCost = data[r].estCost;
         console.log("Cost: " + bigCost);
         $("#bigCost").html("$" + bigCost);
     }
