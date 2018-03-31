@@ -119,15 +119,15 @@
           </a>
         </li>
         <li class="dashboard-link">
-          <a class="modal-trigger" href="#dash-modal3">
+          <a class="modal-trigger" href="#dash-modal6">
             <h3 class="dashboard-list center-align">Edit your budget</h3>
           </a>
         </li>
-        <!-- <li class="dashboard-link">
-          <a class="modal-trigger" href="#dash-modal4">
-            <h3 class="dashboard-list center-align">Edit your profile</h3>
+        <li class="dashboard-link">
+          <a class="modal-trigger" href="#!">
+            <h3 class="dashboard-list center-align">New WeekND</h3>
           </a>
-        </li> -->
+        </li>
         <li class="dashboard-link">
           <a id="logout" href="/">
             <h3 class="dashboard-list center-align">Log out</h3>
@@ -262,6 +262,100 @@
 
   <!-- MODALS -->
   <!-- Modal Structure -->
+  <div id="dash-modal6" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4 class="modal-title">Which spending goals would you like to update?</h4>
+      <form>
+        <div class="row">
+          <div class="col s4">
+            <p>
+              <img class="movie-icon" src="images/movie.png">
+              <input type="checkbox" id="movie-btn-2">
+              <label for="movie-btn-2">
+                <span>Movies</span>
+              </label>
+              <div class="input-field inline">
+                <input id="movie_amount_2" type="text" data-id="" class="validate movies-cost">
+                <label for="movie_amount_2">$$$</label>
+              </div>
+            </p>
+          </div>
+          <div class="col s4">
+            <p>
+              <img class="concert-icon" src="images/music.png">
+              <input type="checkbox" id="concert-btn-2">
+              <label for="concert-btn-2">
+                <span>Concerts</span>
+              </label>
+              <div class="input-field inline">
+                <input id="concert_amount_2" type="text" data-id="" class="validate concerts-cost">
+                <label for="concert_amount_2">$$$</label>
+              </div>
+            </p>
+          </div>
+          <div class="col s4">
+            <p>
+              <img class="shopping-icon" src="images/shopping.png">
+              <input type="checkbox" id="shopping-btn-2">
+              <label for="shopping-btn-2">
+                <span>Shopping</span>
+              </label>
+              <div class="input-field inline">
+                <input id="shopping_amount_2" type="text" data-id="" class="validate shopping-cost">
+                <label for="shopping_amount_2">$$$</label>
+              </div>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s4">
+            <p>
+              <img class="dinner-icon" src="images/food.png">
+              <input type="checkbox" id="dinner-btn-2">
+              <label for="dinner-btn-2">
+                <span>Eating out</span>
+              </label>
+              <div class="input-field inline">
+                <input id="dinner_amount_2" type="text" data-id="" class="validate eating-cost">
+                <label for="dinner_amount_2">$$$</label>
+              </div>
+            </p>
+          </div>
+          <div class="col s4">
+            <p>
+              <img class="drinks-icon" src="images/drinks.png">
+              <input type="checkbox" id="drinks-btn-2">
+              <label for="drinks-btn-2">
+                <span>Drinks</span>
+              </label>
+              <div class="input-field inline">
+                <input id="drinks_amount_2" type="text" data-id="" class="validate drinks-cost">
+                <label for="drinks_amount_2">$$$</label>
+              </div>
+            </p>
+          </div>
+          <div class="col s4">
+            <p>
+              <img class="outing-icon" src="images/outing.png">
+              <input type="checkbox" id="outing-btn-2">
+              <label for="outing-btn-2">
+                <span>Outings</span>
+              </label>
+              <div class="input-field inline">
+                <input id="outing_amount_2" type="text" data-id="" class="validate outing-cost">
+                <label for="outing_amount_2">$$$</label>
+              </div>
+            </p>
+          </div>
+        </div>
+    </form>
+    </div>
+  <div class="modal-footer">
+    <a id="updateGoals" href="#!" class="modal-action modal-close waves-effect waves-teal btn-flat">Submit</a>
+  </div>
+  </div>
+
+
   <div id="dash-modal1" class="modal modal-fixed-footer">
     <div class="modal-content">
       <h4 class="modal-title">What did you spend money on? How much?</h4>

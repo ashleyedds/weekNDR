@@ -223,7 +223,7 @@ $(document).ready(function () {
                 "id": $(".movies-cost").attr("data-id"),
                 "actualCost": movieAmount
             };
-            addActualCost(interest);
+            updateCost(interest);
         }
         if ($("#concert-btn").is(":checked")) {
             var concertAmount = $("#concert_amount").val().trim()
@@ -232,7 +232,7 @@ $(document).ready(function () {
                 "id": $(".concerts-cost").attr("data-id"),
                 "actualCost": concertAmount
             };
-            addActualCost(interest);
+            updateCost(interest);
 
         }
         if ($("#shopping-btn").is(":checked")) {
@@ -242,7 +242,7 @@ $(document).ready(function () {
                 "id": $(".shopping-cost").attr("data-id"),
                 "actualCost": shopAmount
             };
-            addActualCost(interest);
+            updateCost(interest);
 
         }
         if ($("#dinner-btn").is(":checked")) {
@@ -252,7 +252,7 @@ $(document).ready(function () {
                 "id": $(".eating-cost").attr("data-id"),
                 "actualCost": dinnerAmount
             };
-            addActualCost(interest);
+            updateCost(interest);
 
         }
         if ($("#drinks-btn").is(":checked")) {
@@ -262,7 +262,7 @@ $(document).ready(function () {
                 "id": $(".drinks-cost").attr("data-id"),
                 "actualCost": drinksAmount
             };
-            addActualCost(interest);
+            updateCost(interest);
 
         }
         if ($("#outing-btn").is(":checked")) {
@@ -272,12 +272,12 @@ $(document).ready(function () {
                 "id": $(".outing-cost").attr("data-id"),
                 "actualCost": outingAmount
             };
-            addActualCost(interest);
+            updateCost(interest);
 
         }
     })
 
-    function addActualCost(interests) {
+    function updateCost(interests) {
         // $.post("/api/get_interests", interests, function() {
         //     // getInterests(interests);
         // })
@@ -291,6 +291,69 @@ $(document).ready(function () {
                 getInterestList();
             });
     }
+
+    $("#updateGoals").on("click", function () {
+        if ($("#movie-btn-2").is(":checked")) {
+
+            var movieAmount = $("#movie_amount_2").val().trim()
+
+            var interest = {
+                "id": $(".movies-cost").attr("data-id"),
+                "estCost": movieAmount
+            };
+            updateCost(interest);
+        }
+        if ($("#concert-btn-2").is(":checked")) {
+            var concertAmount = $("#concert_amount_2").val().trim()
+
+            var interest = {
+                "id": $(".concerts-cost").attr("data-id"),
+                "estCost": concertAmount
+            };
+            updateCost(interest);
+
+        }
+        if ($("#shopping-btn-2").is(":checked")) {
+            var shopAmount = $("#shopping_amount_2").val().trim()
+
+            var interest = {
+                "id": $(".shopping-cost").attr("data-id"),
+                "estCost": shopAmount
+            };
+            updateCost(interest);
+
+        }
+        if ($("#dinner-btn-2").is(":checked")) {
+            var dinnerAmount = $("#dinner_amount_2").val().trim();
+
+            var interest = {
+                "id": $(".eating-cost").attr("data-id"),
+                "estCost": dinnerAmount
+            };
+            updateCost(interest);
+
+        }
+        if ($("#drinks-btn-2").is(":checked")) {
+            var drinksAmount = $("#drinks_amount_2").val().trim();
+
+            var interest = {
+                "id": $(".drinks-cost").attr("data-id"),
+                "estCost": drinksAmount
+            };
+            updateCost(interest);
+
+        }
+        if ($("#outing-btn-2").is(":checked")) {
+            var outingAmount = $("#outing_amount_2").val().trim();
+
+            var interest = {
+                "id": $(".outing-cost").attr("data-id"),
+                "estCost": outingAmount
+            };
+            updateCost(interest);
+
+        }
+    })
 
 
 
