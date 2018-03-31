@@ -17,10 +17,9 @@ $(document).ready(function () {
         })
     })
 
-    if (url === "http://localhost:8080/dashboard") {
-        getInterestList();
-        console.log("this worked")
-    }
+   
+        
+     
 
     function getInterestList() {
         $.get("/api/get_interests", function (data) {
@@ -34,6 +33,8 @@ $(document).ready(function () {
         });
 
     }
+    
+    getInterestList();
 
     function getBigBudget(data) {
         var r = data[3];
