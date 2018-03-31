@@ -83,7 +83,7 @@ module.exports = function(app) {
     });
   });
 
-  app.put("/api/update_bank", function(req, res) {
+  app.put("/api/big_cost", function(req, res) {
     db.Person.update(
       req.body,
       {
