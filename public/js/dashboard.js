@@ -28,8 +28,17 @@ $(document).ready(function() {
             // window.location.href = "/dashtest";
             getInterests(data)
             getBarChart(data);
+            getBigBudget(data);
         });
 
+      }
+
+      function getBigBudget(data) {
+        var r = data[3];
+        console.log("Budget: " + r);
+        var bigCost = r.estCost;
+        console.log("Cost: " + bigCost);
+        $("#bigCost").html("$" + bigCost);
       }
 
       function getInterests(data) {
@@ -45,7 +54,7 @@ $(document).ready(function() {
         }];
 
 
-        for (let i = 0; i < data.length; i++) {
+        for (let i = 0; i < data.length -1; i++) {
             
                 var cost = parseInt(data[i].estCost);
                 var title = data[i].title;
@@ -53,7 +62,7 @@ $(document).ready(function() {
         
                     dataPlotly[0].values.push(cost);
                     dataPlotly[0].labels.push(title);
-                        if (i === data.length -1) {
+                        if (i === data.length -2) {
                             Plotly.newPlot('myDiv3', dataPlotly);
 
                             console.log(dataPlotly); 
@@ -80,7 +89,7 @@ $(document).ready(function() {
           
           var layout = {barmode: 'group'};
 
-          for (let i = 0; i < res.length; i++) {
+          for (let i = 0; i < res.length -1; i++) {
       
             var cost = parseInt(res[i].estCost);
             var title = res[i].title;
@@ -90,7 +99,7 @@ $(document).ready(function() {
             trace2.x.push(title);
             trace1.y.push(cost);
             trace2.y.push(cost - 4)
-                if (i === res.length -1) {
+                if (i === res.length -2) {
                     Plotly.newPlot('myDiv2', data, layout);
 
                 }
