@@ -1,21 +1,21 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     var url = window.location.href;
     console.log(url);
     var userId;
 
-    $.get("/api/user_data").then(function(data) {
+    $.get("/api/user_data").then(function (data) {
         $(".member-name").text(data.name);
         $(".dashboard-desktop-profile").attr("src", data.pic);
         $(".dashboard-profile").attr("src", data.pic);
         userId = data.Id;
-      });
+    });
 
-    $("#logout-button").on("click", function() {
-        $.get("/api/logout").then(function() {
+    $("#logout-button").on("click", function () {
+        $.get("/api/logout").then(function () {
             console.log("you are logged out");
         })
-    })  
+    })
 
     if (url === "http://localhost:8080/dashboard") {
         getInterestList();
@@ -23,7 +23,7 @@ $(document).ready(function() {
     }
 
     function getInterestList() {
-        $.get("/api/get_interests", function(data) {
+        $.get("/api/get_interests", function (data) {
             console.log("api worked" + data[0].title);
             // window.location.href = "/dashtest";
             getInterests(data)
@@ -31,19 +31,19 @@ $(document).ready(function() {
             getBigBudget(data);
         });
 
-      }
+    }
 
-      function getBigBudget(data) {
+    function getBigBudget(data) {
         var r = data[3];
         console.log("Budget: " + r);
         var bigCost = r.estCost;
         console.log("Cost: " + bigCost);
         $("#bigCost").html("$" + bigCost);
-      }
+    }
 
-      function getInterests(data) {
-          console.log(data);
-          console.log("Something Happened")
+    function getInterests(data) {
+        console.log(data);
+        console.log("Something Happened")
         var dataPlotly = [{
             values: [],
             labels: [],
@@ -54,57 +54,57 @@ $(document).ready(function() {
         }];
 
 
-        for (let i = 0; i < data.length -1; i++) {
-            
-                var cost = parseInt(data[i].estCost);
-                var title = data[i].title;
+        for (let i = 0; i < data.length - 1; i++) {
 
-        
-                    dataPlotly[0].values.push(cost);
-                    dataPlotly[0].labels.push(title);
-                        if (i === data.length -2) {
-                            Plotly.newPlot('myDiv3', dataPlotly);
+            var cost = parseInt(data[i].estCost);
+            var title = data[i].title;
 
-                            console.log(dataPlotly); 
-                        }
-                    }
-      }
 
-            function getBarChart(res) {
+            dataPlotly[0].values.push(cost);
+            dataPlotly[0].labels.push(title);
+            if (i === data.length - 2) {
+                Plotly.newPlot('myDiv3', dataPlotly);
+
+                console.log(dataPlotly);
+            }
+        }
+    }
+
+    function getBarChart(res) {
         var trace1 = {
             x: [],
             y: [],
             name: 'Estimated Cost',
             type: 'bar'
-          };
-          
-          var trace2 = {
+        };
+
+        var trace2 = {
             x: [],
             y: [],
             name: 'Actual Cost',
             type: 'bar'
-          };
-          
-          var data = [trace1, trace2];
-          
-          var layout = {barmode: 'group'};
+        };
 
-          for (let i = 0; i < res.length -1; i++) {
-      
+        var data = [trace1, trace2];
+
+        var layout = { barmode: 'group' };
+
+        for (let i = 0; i < res.length - 1; i++) {
+
             var cost = parseInt(res[i].estCost);
             var title = res[i].title;
 
- 
+
             trace1.x.push(title);
             trace2.x.push(title);
             trace1.y.push(cost);
             trace2.y.push(cost - 4)
-                if (i === res.length -2) {
-                    Plotly.newPlot('myDiv2', data, layout);
+            if (i === res.length - 2) {
+                Plotly.newPlot('myDiv2', data, layout);
 
-                }
             }
-          
-      }
+        }
+
+    }
 
 })
