@@ -29,8 +29,17 @@ $(document).ready(function () {
             getInterests(data)
             getBarChart(data);
             displayInterestBudget(data);
+            getBigBudget(data);
         });
 
+    }
+
+    function getBigBudget(data) {
+        var r = data[3];
+        console.log("Budget: " + r);
+        var bigCost = r.estCost;
+        console.log("Cost: " + bigCost);
+        $("#bigCost").html("$" + bigCost);
     }
 
     function displayInterestBudget(data) {
@@ -71,7 +80,7 @@ $(document).ready(function () {
         }];
 
 
-        for (let i = 0; i < data.length; i++) {
+        for (let i = 0; i < data.length -1; i++) {
 
             var cost = parseInt(data[i].estCost);
             var title = data[i].title;
@@ -79,7 +88,7 @@ $(document).ready(function () {
 
             dataPlotly[0].values.push(cost);
             dataPlotly[0].labels.push(title);
-            if (i === data.length - 1) {
+            if (i === data.length - 2) {
                 Plotly.newPlot('myDiv3', dataPlotly);
 
                 console.log(dataPlotly);
@@ -106,7 +115,7 @@ $(document).ready(function () {
 
         var layout = { barmode: 'group' };
 
-        for (let i = 0; i < res.length; i++) {
+        for (let i = 0; i < res.length -1; i++) {
 
             var cost = parseInt(res[i].estCost);
             var title = res[i].title;
@@ -118,7 +127,7 @@ $(document).ready(function () {
             trace1.y.push(cost);
             trace2.y.push(actualCost);
 
-            if (i === res.length - 1) {
+            if (i === res.length - 2) {
                 Plotly.newPlot('myDiv2', data, layout);
 
             }
@@ -126,11 +135,11 @@ $(document).ready(function () {
 
     }
 
-    $("#actualCost").on("click", function(){
+    $("#actualCost").on("click", function () {
         if ($("#movie-btn").is(":checked")) {
-            
+
             var movieAmount = $("#movie_amount").val().trim()
-            
+
             var interest = {
                 "id": $(".movies-cost").attr("data-id"),
                 "actualCost": movieAmount
@@ -145,47 +154,47 @@ $(document).ready(function () {
                 "actualCost": concertAmount
             };
             addActualCost(interest);
-            
+
         }
         if ($("#shopping-btn").is(":checked")) {
             var shopAmount = $("#shopping_amount").val().trim()
-            
+
             var interest = {
                 "id": $(".shopping-cost").attr("data-id"),
                 "actualCost": shopAmount
             };
             addActualCost(interest);
-            
+
         }
         if ($("#dinner-btn").is(":checked")) {
             var dinnerAmount = $("#dinner_amount").val().trim();
-            
+
             var interest = {
                 "id": $(".eating-cost").attr("data-id"),
                 "actualCost": dinnerAmount
             };
             addActualCost(interest);
-            
+
         }
         if ($("#drinks-btn").is(":checked")) {
             var drinksAmount = $("#drinks_amount").val().trim();
-            
+
             var interest = {
                 "id": $(".drinks-cost").attr("data-id"),
                 "actualCost": drinksAmount
             };
             addActualCost(interest);
-            
+
         }
         if ($("#outing-btn").is(":checked")) {
             var outingAmount = $("#outing_amount").val().trim();
-            
+
             var interest = {
                 "id": $(".outing-cost").attr("data-id"),
                 "actualCost": outingAmount
             };
             addActualCost(interest);
-            
+
         }
     })
 
@@ -198,12 +207,12 @@ $(document).ready(function () {
             method: "PUT",
             url: "/api/update_cost",
             data: interests
-          })
-            .then(function() {
-              getInterestList();
+        })
+            .then(function () {
+                getInterestList();
             });
     }
-      
-      
+
+
 
 })
