@@ -29,12 +29,58 @@
         display: none;
       }
       nav .nav-landing {
-        height: 120px;
+        height: 87px;
+        width: 125%;
+      }
+      .landing-icon {
+        position: absolute;
+        left: 24%;
+        top: 15%;
+      }
+      h1.landing-header {
+        top: 53%;
+        left: 34%;
+        font-size: 70px;
+      }
+      button.submit-btn {
+        position: absolute;
+        top: 71%;
+        left: 39%;
+        font-size: 25px;
+        padding: 25px 50px 55px;
       }
       .landing-login {
-        font-size: 40px;
+        font-size: 25px;
         margin: 25px;
-      }         
+      }   
+      .slider .mobile-slider.slides {
+        background-color: rgba(0,0,0,0);
+        font-family: 'Saira Condensed', sans-serif;
+        bottom: 48%;
+        height: 435px;
+      }
+      .mobile-slider.slider {
+        position: fixed;
+        top: 63%;
+        right: -2%;
+        height: 410px;
+      }
+    
+      .mobile-slider.slider .indicators {
+        bottom: 40%;
+      }
+
+      h3 {
+        font-size: 2.5rem;
+      }
+
+      h5 {
+        font-size: 1.5rem;
+      }
+    
+      .mobile-slider.slider .indicators .indicator-item.active {
+        background-color: #046971;
+      }     
       .carousel.carousel-slider {
         top: 58px;
         left: 16px;
@@ -100,25 +146,6 @@
         0.5px -0.5px 0 #000,
         -0.5px 0.5px 0 #000,
         0.5px 0.5px 0 #000;
-  }
-
-  .slider .mobile-slider.slides {
-    background-color: rgba(0,0,0,0);
-    font-family: 'Saira Condensed', sans-serif;
-  }
-  .mobile-slider.slider {
-    position: fixed;
-    top: 60%;
-    right: -2%;
-    height: 280px;
-  }
-
-  .mobile-slider.slider .indicators {
-    bottom: 40%;
-  }
-
-  .mobile-slider.slider .indicators .indicator-item.active {
-    background-color: #046971;
   }
 
   /* TABLET/DESKTOP */
