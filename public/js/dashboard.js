@@ -224,6 +224,18 @@ $(document).ready(function () {
         $("#movie_amount, #concert_amount, #shopping_amount, #dinner_amount, #drinks_amount, #outing_amount").removeClass("valid");
 
         $("label").attr("class", "");
+    });
+
+    $(".edit-budget-btn").on("click", function() {
+        $("#movie-btn-2, #concert-btn-2, #shopping-btn-2, #dinner-btn-2, #drinks-btn-2, #outing-btn-2").prop("checked", null);
+
+        $("#movie_amount_2, #concert_amount_2, #shopping_amount_2, #dinner_amount_2, #drinks_amount_2, #outing_amount_2").prop("disabled", true);
+
+        $("#movie_amount_2, #concert_amount_2, #shopping_amount_2, #dinner_amount_2, #drinks_amount_2, #outing_amount_2").val("");
+
+        $("#movie_amount_2, #concert_amount_2, #shopping_amount_2, #dinner_amount_2, #drinks_amount_2, #outing_amount_2").removeClass("valid");
+
+        $("label").attr("class", "");
     })
 
     $("#actualCost").on("click", function () {
