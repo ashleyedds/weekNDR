@@ -101,7 +101,7 @@ $(document).ready(function () {
     }
 
     function getScaleChart(data) {
-        var percentageToGoal = 175;
+        var percentageToGoal = 0;
 
         // Trig to calc meter point
         var degrees = 180 - percentageToGoal,
