@@ -214,7 +214,20 @@ $(document).ready(function () {
 
     }
 
+    $(".add-expense-btn").on("click", function() {
+        $("#movie-btn, #concert-btn, #shopping-btn, #dinner-btn, #drinks-btn, #outing-btn").prop("checked", null);
+
+        $("#movie_amount, #concert_amount, #shopping_amount, #dinner_amount, #drinks_amount, #outing_amount").prop("disabled", true);
+
+        $("#movie_amount, #concert_amount, #shopping_amount, #dinner_amount, #drinks_amount, #outing_amount").val("");
+
+        $("#movie_amount, #concert_amount, #shopping_amount, #dinner_amount, #drinks_amount, #outing_amount").removeClass("valid");
+
+        $("label").attr("class", "");
+    })
+
     $("#actualCost").on("click", function () {
+
         if ($("#movie-btn").is(":checked")) {
 
             var movieAmount = $("#movie_amount").val().trim()

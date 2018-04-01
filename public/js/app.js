@@ -36,13 +36,6 @@ $(document).ready(function () {
     }
 
     //Profile picture upload
-    $(".file-upload").on('change', function () {
-        readURL(this);
-    });
-
-    $(".upload-button").on('click', function () {
-        $(".file-upload").click();
-    });
 
     $("#profile-one").on("click", function () {
         $(".profile-pic").attr("src", "images/profile1.png");
@@ -139,17 +132,5 @@ $(document).ready(function () {
         }
     });
 
-    $('.file-upload').change(function(){
-        var frm = new FormData();
-        frm.append('file-upload', input.files[0]);
-        $.ajax({
-            method: 'POST',
-            address: 'api/to/save/image',
-            data: frm,
-            contentType: false,
-            processData: false,
-            cache: false
-        });
-    });
 
 });
