@@ -65,7 +65,7 @@ $(document).ready(function () {
         $(".profile-pic").attr("src", "images/profile9.png");
     });
 
-    //Budgeting 
+    //Budgeting Landing
     $("#movie-btn").on("click", function () {
         $("#movie_amount").prop("disabled", false);
     });
@@ -83,6 +83,26 @@ $(document).ready(function () {
     });
     $("#outing-btn").on("click", function () {
         $("#outing_amount").prop("disabled", false);
+    });
+
+    //Budgeting Dashboard
+    $("#movie-btn-2").on("click", function () {
+        $("#movie_amount_2").prop("disabled", false);
+    });
+    $("#concert-btn-2").on("click", function () {
+        $("#concert_amount_2").prop("disabled", false);
+    });
+    $("#shopping-btn-2").on("click", function () {
+        $("#shopping_amount_2").prop("disabled", false);
+    });
+    $("#dinner-btn-2").on("click", function () {
+        $("#dinner_amount_2").prop("disabled", false);
+    });
+    $("#drinks-btn-2").on("click", function () {
+        $("#drinks_amount_2").prop("disabled", false);
+    });
+    $("#outing-btn-2").on("click", function () {
+        $("#outing_amount_2").prop("disabled", false);
     });
 
     //Big Expenses
