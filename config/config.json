@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "",
+    "password": "pepper12",
     "database": "weekNDR",
     "host": "127.0.0.1",
     "dialect": "mysql"

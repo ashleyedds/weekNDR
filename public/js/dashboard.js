@@ -17,9 +17,9 @@ $(document).ready(function () {
         })
     })
 
-   
-        
-     
+
+
+
 
     function getInterestList() {
         $.get("/api/get_interests", function (data) {
@@ -33,15 +33,24 @@ $(document).ready(function () {
         });
 
     }
-    
+
     getInterestList();
 
     function getBigBudget(data) {
         var r = data.length - 1;
-        console.log("Budget: " + r);
         var bigCost = data[r].estCost;
-        console.log("Cost: " + bigCost);
         $("#bigCost").html("$" + bigCost);
+
+        var bigType = data[r].title;
+        if (bigType === "Vacation") {
+            $(".big-expense-title").html("Vacation");
+            $(".big-expense-dashboard").attr("src", "images/vacation.png");
+        } else if (bigType === "Big Purchase") {
+            $(".big-expense-title").html("Big Purchase");
+            $(".big-expense-dashboard").attr("src", "images/ring.png");
+        } else {
+            $(".big-expense-title").html("Car");
+        }
     }
 
     function displayInterestBudget(data) {
@@ -84,7 +93,7 @@ $(document).ready(function () {
         }];
 
 
-        for (let i = 0; i < data.length -1; i++) {
+        for (let i = 0; i < data.length - 1; i++) {
 
             var cost = parseInt(data[i].estCost);
             var title = data[i].title;
@@ -128,7 +137,7 @@ $(document).ready(function () {
             hoverinfo: 'text+name'
         },
         {
-            values: [50/6, 50/6, 50/6, 50/6, 50/6, 50/6, 50],
+            values: [50 / 6, 50 / 6, 50 / 6, 50 / 6, 50 / 6, 50 / 6, 50],
             rotation: 90,
             text: ['100%!', '81-99%', '61-80%', '41-60%',
                 '21-40%', '0-20%', ''],
@@ -194,7 +203,7 @@ $(document).ready(function () {
 
         var layout = { barmode: 'group' };
 
-        for (let i = 0; i < res.length -1; i++) {
+        for (let i = 0; i < res.length - 1; i++) {
 
             var cost = parseInt(res[i].estCost);
             var title = res[i].title;
@@ -214,7 +223,7 @@ $(document).ready(function () {
 
     }
 
-    $(".add-expense-btn").on("click", function() {
+    $(".add-expense-btn").on("click", function () {
         $("#movie-btn, #concert-btn, #shopping-btn, #dinner-btn, #drinks-btn, #outing-btn").prop("checked", null);
 
         $("#movie_amount, #concert_amount, #shopping_amount, #dinner_amount, #drinks_amount, #outing_amount").prop("disabled", true);
@@ -226,7 +235,7 @@ $(document).ready(function () {
         $("label").attr("class", "");
     });
 
-    $(".edit-budget-btn").on("click", function() {
+    $(".edit-budget-btn").on("click", function () {
         $("#movie-btn-2, #concert-btn-2, #shopping-btn-2, #dinner-btn-2, #drinks-btn-2, #outing-btn-2").prop("checked", null);
 
         $("#movie_amount_2, #concert_amount_2, #shopping_amount_2, #dinner_amount_2, #drinks_amount_2, #outing_amount_2").prop("disabled", true);
