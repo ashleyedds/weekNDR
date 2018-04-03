@@ -47,10 +47,23 @@ module.exports = function(app) {
           name: req.user.firstName,
           email: req.user.email,
           id: req.user.id,
+          budget: req.user.weeklyFunds,
           bank: req.user.bank,
           pic: req.user.imgUrl
         });
       }
+    });
+
+    app.delete("/api/delete_person/:id", function(req, res) {
+      db.Person.destroy(
+        {
+        where: {
+          id: req.params.id
+        }
+      }).then(function(dbPerson) {
+        res.json(dbPerson)
+        // res.redirect("/");
+      });
     });
 
   app.get("/api/get_interests", middleware, function(req,res){

@@ -17,7 +17,14 @@ $(document).ready(function () {
         })
     })
 
-
+    $("#delete-user").on("click", function() {
+        $.ajax({
+            method: "DELETE",
+            url: "/api/delete_person" + userId
+        })
+            .then(function () {
+            });
+    })
 
 
 
@@ -53,27 +60,39 @@ $(document).ready(function () {
         }
     }
 
+    var actualInterestCost = {};
+
     function displayInterestBudget(data) {
         console.log(data);
         for (let i = 0; i < data.length; i++) {
             if (data[i].title === "Movies") {
                 $(".movie-bucket").html("$" + data[i].estCost);
                 $(".movies-cost").attr("data-id", data[i].id);
+                $(".movies-cost").attr("data-actCost", data[i].actualCost);
+                console.log(data[i].actualCost);
+                var actualMovie = data[i].actualCost
+                actualInterestCost.movies = actualMovie;
+                console.log(actualInterestCost);
             } else if (data[i].title === "Concerts") {
                 $(".music-bucket").html("$" + data[i].estCost);
                 $(".concerts-cost").attr("data-id", data[i].id);
+                $(".concerts-cost").attr("data-actCost", data[i].actualCost);
             } else if (data[i].title === "Shopping") {
                 $(".shopping-bucket").html("$" + data[i].estCost);
                 $(".shopping-cost").attr("data-id", data[i].id);
+                $(".shopping-cost").attr("data-actCost", data[i].actualCost);
             } else if (data[i].title === "Eating Out") {
                 $(".food-bucket").html("$" + data[i].estCost);
                 $(".eating-cost").attr("data-id", data[i].id);
+                $(".eating-cost").attr("data-actCost", data[i].actualCost);
             } else if (data[i].title === "Drinks") {
                 $(".drinks-bucket").html("$" + data[i].estCost);
                 $(".drinks-cost").attr("data-id", data[i].id);
+                $(".drinks-cost").attr("data-actCost", data[i].actualCost);
             } else if (data[i].title === "Outings") {
                 $(".outing-bucket").html("$" + data[i].estCost);
                 $(".outing-cost").attr("data-id", data[i].id);
+                $(".outing-cost").attr("data-actCost", data[i].actualCost);
             }
         }
     }
@@ -250,9 +269,10 @@ $(document).ready(function () {
     $("#actualCost").on("click", function () {
 
         if ($("#movie-btn").is(":checked")) {
-
-            var movieAmount = $("#movie_amount").val().trim()
-
+            var previousAmout = $(".movies-cost").attr("data-actCost");
+            
+            var movieAmount = $("#movie_amount").val().trim();
+            movieAmount = parseInt(movieAmount) + parseInt(previousAmout);
             var interest = {
                 "id": $(".movies-cost").attr("data-id"),
                 "actualCost": movieAmount
@@ -260,8 +280,10 @@ $(document).ready(function () {
             updateCost(interest);
         }
         if ($("#concert-btn").is(":checked")) {
-            var concertAmount = $("#concert_amount").val().trim()
 
+            var previousAmout = $(".concerts-cost").attr("data-actCost");
+            var concertAmount = $("#concert_amount").val().trim()
+            concertAmount = parseInt(concertAmount) + parseInt(previousAmout);
             var interest = {
                 "id": $(".concerts-cost").attr("data-id"),
                 "actualCost": concertAmount
@@ -270,8 +292,10 @@ $(document).ready(function () {
 
         }
         if ($("#shopping-btn").is(":checked")) {
-            var shopAmount = $("#shopping_amount").val().trim()
 
+            var previousAmout = $(".shopping-cost").attr("data-actCost");
+            var shopAmount = $("#shopping_amount").val().trim()
+            shopAmount = parseInt(shopAmount) + parseInt(previousAmout);
             var interest = {
                 "id": $(".shopping-cost").attr("data-id"),
                 "actualCost": shopAmount
@@ -280,8 +304,10 @@ $(document).ready(function () {
 
         }
         if ($("#dinner-btn").is(":checked")) {
-            var dinnerAmount = $("#dinner_amount").val().trim();
 
+            // var previousAmout = $(".eating-cost").attr("data-actCost");
+            var dinnerAmount = $("#dinner_amount").val().trim();
+            dinnerAmount = parseInt(dinnerAmount) + parseInt(actualInterestCost.movies);
             var interest = {
                 "id": $(".eating-cost").attr("data-id"),
                 "actualCost": dinnerAmount
@@ -290,8 +316,10 @@ $(document).ready(function () {
 
         }
         if ($("#drinks-btn").is(":checked")) {
-            var drinksAmount = $("#drinks_amount").val().trim();
 
+            var previousAmout = $(".drinks-cost").attr("data-actCost");
+            var drinksAmount = $("#drinks_amount").val().trim();
+            drinksAmount = parseInt(drinksAmount) + parseInt(previousAmout);
             var interest = {
                 "id": $(".drinks-cost").attr("data-id"),
                 "actualCost": drinksAmount
@@ -300,8 +328,10 @@ $(document).ready(function () {
 
         }
         if ($("#outing-btn").is(":checked")) {
-            var outingAmount = $("#outing_amount").val().trim();
 
+            var previousAmout = $(".outing-cost").attr("data-actCost");
+            var outingAmount = $("#outing_amount").val().trim();
+            outingAmount = parseInt(outingAmount) + parseInt(previousAmout);
             var interest = {
                 "id": $(".outing-cost").attr("data-id"),
                 "actualCost": outingAmount
