@@ -7,7 +7,7 @@ module.exports = function(app) {
 
   // index route loads view.html
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/landing.html"));
+    res.sendFile(path.join(__dirname, "../views/landing.html"));
   });
   // app.get("/dashboard", function(req, res) {
   //   res.sendFile(path.join(__dirname, "../public/dashboard.html"));
@@ -15,7 +15,7 @@ module.exports = function(app) {
 
   // index route loads view.html
   app.get("/dashboard", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/dashboard.html"));
+    res.sendFile(path.join(__dirname, "../views/dashboard.html"));
   });
 
 

@@ -13,7 +13,8 @@ module.exports = function(sequelize, DataTypes) {
       },
       actualCost: {
         type: DataTypes.INTEGER,
-        allowNull: true
+        allowNull: false,
+        defaultValue: 0
       },
       eventDate: {
         type: DataTypes.INTEGER,

@@ -1,19 +1,71 @@
 $(document).ready(function () {
 
     var userId;
-
+    var budget;
     var interests = [];
 
     $("#budgetClick").on("click", function () {
         setTimeout(function () {
             $.get("/api/user_data").then(function (data) {
                 userId = data.id;
+                // budget = data.budget
                 console.log(data.id);
+                putBudget();
             });
         }, 2000);
     });
 
+    function putBudget() {
+        $.get("/api/user_data").then(function (data) {
+            budget = data.budget
+            $(".weekly-budget").text(budget);
+        });
+        
+    }
 
+    $("#movie_amount").change(function() {
+        var amount = $("#movie_amount").val().trim();
+        amount = parseInt(budget) - parseInt(amount);
+        $(".weekly-budget").text(amount);
+        budget = amount;
+        
+        
+    })
+
+    $("#concert_amount").change(function() {
+        var amount = $("#concert_amount").val().trim();
+        amount = parseInt(budget) - parseInt(amount);
+        $(".weekly-budget").text(amount);
+        budget = amount;
+    })
+
+    $("#shopping_amount").change(function() {
+        var amount = $("#shopping_amount").val().trim();
+        amount = parseInt(budget) - parseInt(amount);
+        $(".weekly-budget").text(amount);
+        budget = amount;
+    })
+
+    $("#dinner_amount").change(function() {
+        var amount = $("#dinner_amount").val().trim();
+        amount = parseInt(budget) - parseInt(amount);
+        $(".weekly-budget").text(amount);
+        budget = amount;
+    })
+
+    $("#drinks_amount").change(function() {
+        var amount = $("#drinks_amount").val().trim();
+        amount = parseInt(budget) - parseInt(amount);
+        $(".weekly-budget").text(amount);
+        budget = amount;
+    })
+
+    $("#outing_amount").change(function() {
+        var amount = $("#outing_amount").val().trim();
+        amount = parseInt(budget) - parseInt(amount);
+        $(".weekly-budget").text(amount);
+        budget = amount;
+    })
 
     $("#interestsClick").on("click", function () {
         if ($("#movie-btn").is(":checked")) {
